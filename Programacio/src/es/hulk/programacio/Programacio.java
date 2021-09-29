@@ -8,6 +8,7 @@ package es.hulk.programacio;
 public class Programacio {
 
     public static void main(String[] args) {
+
     }
 
 }
