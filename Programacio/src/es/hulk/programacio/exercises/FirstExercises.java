@@ -9,8 +9,10 @@ import es.hulk.programacio.Programacio;
 
 public class FirstExercises {
 
-    public void helloWorld(String helloWorld) {
+    public static void helloWorld(String helloWorld) {
         System.out.println(helloWorld);
     }
+
+
 
 }

@@ -10,8 +10,7 @@ import es.hulk.programacio.exercises.FirstExercises;
 public class Programacio {
 
     public static void main(String[] args) {
-        FirstExercises exercises = new FirstExercises();
-        exercises.helloWorld("");
+        FirstExercises.helloWorld("Hello World");
     }
 
 }
