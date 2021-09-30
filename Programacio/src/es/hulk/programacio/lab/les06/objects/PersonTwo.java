@@ -7,8 +7,8 @@ package es.hulk.programacio.lab.les06.objects;
 
 public class PersonTwo {
 
-    private StringBuilder name = new StringBuilder(8);
-    private StringBuilder phoneNumber = new StringBuilder();
+    private final StringBuilder name = new StringBuilder(8);
+    private final StringBuilder phoneNumber = new StringBuilder();
 
     public void displayPersonInfo() {
         name.append("Alonso");
@@ -26,7 +26,6 @@ public class PersonTwo {
         phoneNumber.insert(7, "-");
 
         System.out.println("Phone Number: " + phoneNumber.toString());
-
     }
 
 }
