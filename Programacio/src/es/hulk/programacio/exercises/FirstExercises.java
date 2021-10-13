@@ -2,6 +2,8 @@ package es.hulk.programacio.exercises;
 
 import es.hulk.programacio.Programacio;
 
+import java.util.Arrays;
+
 /**
  * Created by Hulk
  * at 29/09/2021 11:57
@@ -10,7 +12,9 @@ import es.hulk.programacio.Programacio;
 public class FirstExercises {
 
     public static void helloWorld(String helloWorld) {
-        System.out.println(helloWorld);
+        String[] array = helloWorld.split(" ");
+        System.out.println(Arrays.toString(array));
+
     }
 
 

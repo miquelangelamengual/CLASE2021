@@ -13,8 +13,6 @@ public class ShirtTest {
         shirt.setName("a");
         shirt.setCode(1);
         shirt.setColor("Brown");
-
         shirt.display();
     }
-
 }

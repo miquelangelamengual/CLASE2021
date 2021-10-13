@@ -1,6 +1,7 @@
 package es.hulk.programacio;
 
 import es.hulk.programacio.exercises.FirstExercises;
+import es.hulk.programacio.objects.People;
 
 /**
  * Created by Hulk
@@ -10,7 +11,18 @@ import es.hulk.programacio.exercises.FirstExercises;
 public class Programacio {
 
     public static void main(String[] args) {
-        FirstExercises.helloWorld("Hello World");
+        people();
+    }
+
+    public static People people() {
+        People people = new People();
+        people.setName("Polaris");
+        people.setAge(20);
+        people.setDni("NN");
+        people.setTelephoneNumber(0);
+        people.display();
+
+        return people;
     }
 
 }
