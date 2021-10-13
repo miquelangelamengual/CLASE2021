@@ -1,6 +1,6 @@
 package es.hulk.programacio;
 
-import es.hulk.programacio.exercises.FirstExercises;
+import es.hulk.programacio.exercises.Conditionals;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        doggy();
+        Conditionals conditions = new Conditionals();
+        conditions.multiplyOfTwo();
     }
 
     public static People people() {
