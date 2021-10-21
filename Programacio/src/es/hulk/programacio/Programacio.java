@@ -15,7 +15,7 @@ public class Programacio {
 
     public static void main(String[] args) {
         Conditionals conditions = new Conditionals();
-        conditions.multiplyOfTwo();
+        conditions.hourTime();
     }
 
     public static People people() {
