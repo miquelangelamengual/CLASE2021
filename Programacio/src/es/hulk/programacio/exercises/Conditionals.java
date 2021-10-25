@@ -1,5 +1,7 @@
 package es.hulk.programacio.exercises;
 
+import es.hulk.programacio.utils.Utils;
+
 import java.util.Scanner;
 
 /**
@@ -29,7 +31,7 @@ public class Conditionals extends Thread {
         if (x % 2 == 0) {
             System.out.println("This number is multiple of 2");
         } else {
-            System.out.println("Wrong number");
+            Utils.noup();
         }
     }
 
@@ -47,14 +49,13 @@ public class Conditionals extends Thread {
     public void dayOfWeek(String type) {
 
         if (!(type.equals("IF") || type.equals("SWITCH"))) {
-            System.out.println("Invalid Type");
-            System.out.println("Valid types: IF & SWITCH (its case-sensitive)");
+            Utils.noup();
         }
 
         int day = scanner.nextInt();
 
         if (day > 7) {
-            System.out.println("Invalid day");
+            Utils.noup();
             return;
         }
 
@@ -120,9 +121,9 @@ public class Conditionals extends Thread {
         int hour = scanner.nextInt();
 
         if (hour < 8) {
-            System.out.println("Invalid Hour");
+            Utils.noup();
         } else if (hour > 23) {
-            System.out.println("Invalid Hour");
+            Utils.noup();
         }
 
         if (hour >= 8 && hour <= 12) {
@@ -145,4 +146,41 @@ public class Conditionals extends Thread {
         }
     }
 
+    public void marks() {
+        int mark = scanner.nextInt();
+
+        if (mark > 11) {
+            Utils.noup();
+            return;
+        }
+
+        if (mark < -1) {
+            Utils.noup();
+            return;
+        }
+
+        if (mark >= 0 && mark <= 4) {
+            System.out.println("Insuficient");
+            return;
+        }
+
+        if (mark == 5) {
+            System.out.println("Suficient");
+            return;
+        }
+
+        if (mark == 6) {
+            System.out.println("Be");
+            return;
+        }
+
+        if (mark == 7 || mark == 8) {
+            System.out.println("Notable");
+            return;
+        }
+
+        if (mark == 9 || mark == 10) {
+            System.out.println("Excelent");
+        }
+    }
 }
