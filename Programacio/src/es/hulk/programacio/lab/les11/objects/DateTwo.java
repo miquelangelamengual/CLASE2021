@@ -1,6 +1,5 @@
 package es.hulk.programacio.lab.les11.objects;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
