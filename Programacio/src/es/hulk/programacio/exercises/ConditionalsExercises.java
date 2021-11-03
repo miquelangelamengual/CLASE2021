@@ -2,6 +2,8 @@ package es.hulk.programacio.exercises;
 
 import es.hulk.programacio.utils.Color;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -9,7 +11,7 @@ import java.util.Scanner;
  * at 13/10/2021 9:36
  */
 
-public class Conditionals extends Thread {
+public class ConditionalsExercises extends Thread {
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -189,10 +191,10 @@ public class Conditionals extends Thread {
         Color.printColor("line", "purple", "Put the day you want: ");
         int d = scanner.nextInt();
 
-        Color.printColor("line","purple", "Put the month you want: ");
+        Color.printColor("line", "purple", "Put the month you want: ");
         int m = scanner.nextInt();
 
-        Color.printColor("line","purple", "Put the year you want: ");
+        Color.printColor("line", "purple", "Put the year you want: ");
         int y = scanner.nextInt();
 
         if (d > 30) {
@@ -208,6 +210,82 @@ public class Conditionals extends Thread {
             return;
         }
 
-        Color.printColor("newline","green", "Your date is " + d + "/" + m + "/" + y);
+        Color.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
+    }
+
+    public void dateTime_v2() {
+
+        Color.printColor("line", "purple", "Put the day you want: ");
+        int d = scanner.nextInt();
+
+        Color.printColor("line", "purple", "Put the month you want: ");
+        int m = scanner.nextInt();
+
+        Color.printColor("line", "purple", "Put the year you want: ");
+        int y = scanner.nextInt();
+
+        if (d > 30) {
+            Color.noup();
+            return;
+        }
+
+        if (m > 12) {
+            Color.noup();
+            return;
+        }
+
+        if (y > 3000) {
+            Color.noup();
+            return;
+        }
+
+        for (int i = 0; i < 13; i++) {
+            if (i == 1 || i == 3 || i == 5 || i == 7 || i == 8 || i == 10 || i == 12) {
+                if (d > 31) {
+                    Color.noup();
+                    return;
+                }
+            } else if (i == 2) {
+                if (d > 28) {
+                    Color.noup();
+                    return;
+                }
+            } else {
+                if (d > 30) {
+                    Color.noup();
+                    return;
+                }
+            }
+        }
+        Color.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
+    }
+
+    public void getBestNumber() {
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int z = scanner.nextInt();
+
+        if (x > y && x > z) {
+            System.out.println("Higher number: " + x);
+        } else if (x == y && x == z) {
+            System.out.println("Equals Number: " + x + y + z);
+        } else if (x < y && x < z) {
+            System.out.println("Lower Number: " + x);
+        }
+    }
+
+    public void checkAge() {
+        int age = scanner.nextInt();
+
+        if (age < 0) {
+            Color.noup();
+            return;
+        }
+
+        if (age < 18) {
+            Color.printColor("newline", "red", "Your age is lower than 18, so you cannot go further");
+        } else {
+            Color.printColor("newline", "green", "Your age is 18 or higher so congrats");
+        }
     }
 }
