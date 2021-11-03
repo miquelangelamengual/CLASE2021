@@ -15,7 +15,7 @@ public class Programacio {
 
     public static void main(String[] args) {
         Conditionals conditions = new Conditionals();
-        conditions.marks();
+        conditions.dateTime();
     }
 
     public static People people() {

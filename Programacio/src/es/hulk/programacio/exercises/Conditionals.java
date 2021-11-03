@@ -1,6 +1,6 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.utils.Utils;
+import es.hulk.programacio.utils.Color;
 
 import java.util.Scanner;
 
@@ -31,7 +31,7 @@ public class Conditionals extends Thread {
         if (x % 2 == 0) {
             System.out.println("This number is multiple of 2");
         } else {
-            Utils.noup();
+            Color.noup();
         }
     }
 
@@ -49,13 +49,13 @@ public class Conditionals extends Thread {
     public void dayOfWeek(String type) {
 
         if (!(type.equals("IF") || type.equals("SWITCH"))) {
-            Utils.noup();
+            Color.noup();
         }
 
         int day = scanner.nextInt();
 
         if (day > 7) {
-            Utils.noup();
+            Color.noup();
             return;
         }
 
@@ -121,9 +121,9 @@ public class Conditionals extends Thread {
         int hour = scanner.nextInt();
 
         if (hour < 8) {
-            Utils.noup();
+            Color.noup();
         } else if (hour > 23) {
-            Utils.noup();
+            Color.noup();
         }
 
         if (hour >= 8 && hour <= 12) {
@@ -150,12 +150,12 @@ public class Conditionals extends Thread {
         int mark = scanner.nextInt();
 
         if (mark > 11) {
-            Utils.noup();
+            Color.noup();
             return;
         }
 
         if (mark < -1) {
-            Utils.noup();
+            Color.noup();
             return;
         }
 
@@ -182,5 +182,32 @@ public class Conditionals extends Thread {
         if (mark == 9 || mark == 10) {
             System.out.println("Excelent");
         }
+    }
+
+    public void dateTime() {
+
+        Color.printColor("line", "purple", "Put the day you want: ");
+        int d = scanner.nextInt();
+
+        Color.printColor("line","purple", "Put the month you want: ");
+        int m = scanner.nextInt();
+
+        Color.printColor("line","purple", "Put the year you want: ");
+        int y = scanner.nextInt();
+
+        if (d > 30) {
+            Color.noup();
+            return;
+        }
+        if (m > 12) {
+            Color.noup();
+            return;
+        }
+        if (y > 3000) {
+            Color.noup();
+            return;
+        }
+
+        Color.printColor("newline","green", "Your date is " + d + "/" + m + "/" + y);
     }
 }
