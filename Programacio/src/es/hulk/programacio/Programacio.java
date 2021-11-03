@@ -1,6 +1,8 @@
 package es.hulk.programacio;
 
-import es.hulk.programacio.exercises.Conditionals;
+import es.hulk.programacio.exercises.ArraysExercises;
+import es.hulk.programacio.exercises.ConditionalsExercises;
+import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -14,8 +16,11 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        Conditionals conditions = new Conditionals();
-        conditions.dateTime();
+        ConditionalsExercises conditions = new ConditionalsExercises();
+        ArraysExercises arr = new ArraysExercises();
+        LoopsExercises loops = new LoopsExercises();
+
+        loops.if0Stop();
     }
 
     public static People people() {
