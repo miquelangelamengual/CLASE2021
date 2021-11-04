@@ -1,16 +1,13 @@
 package es.hulk.programacio.sortAlgorithms;
 
-import com.sun.istack.internal.NotNull;
 import es.hulk.programacio.utils.Color;
-
-import java.util.Arrays;
 
 /**
  * Created by Hulk
- * at 4/11/21 11:23
+ * at 4/11/21 12:37
  */
 
-public class SelectionSort {
+public class BubbleSort {
 
     public static void applySort(int[] arr, String mode) {
 
@@ -20,26 +17,21 @@ public class SelectionSort {
         }
 
         for (int i = 0; i < arr.length; i++) {
-            int aux = arr[i];
-            int index = i;
-            for (int j = i+1; j < arr.length; j++) {
+            for (int j = 1; j < arr.length - i; j++) {
                 if (mode.equals("desc")) {
-                    if (aux > arr[j]) {
-                        aux = arr[j];
-                        index = j;
+                    if (arr[j - 1] > arr[j]) {
+                        int aux = arr[j - 1];
+                        arr[j - 1] = arr[j];
+                        arr[j] = aux;
                     }
                 } else if (mode.equals("asc")) {
-                    if (aux < arr[j]) {
-                        aux = arr[j];
-                        index = j;
+                    if (arr[j - 1] < arr[j]) {
+                        int aux = arr[j - 1];
+                        arr[j - 1] = arr[j];
+                        arr[j] = aux;
                     }
                 }
             }
-
-            aux = arr[i];
-            arr[i] = arr[index];
-            arr[index] = aux;
-            System.out.println(arr[i]);
         }
     }
 

@@ -5,8 +5,9 @@ import es.hulk.programacio.exercises.ConditionalsExercises;
 import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
-import es.hulk.programacio.sortAlgorithms.SelectionSort;
+import es.hulk.programacio.sortAlgorithms.BubbleSort;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -21,8 +22,9 @@ public class Programacio {
         ArraysExercises arrays = new ArraysExercises();
         LoopsExercises loops = new LoopsExercises();
 
-        int[] arr = new int[]{0,6,10,2,1,3,4};
-        SelectionSort.sort(arr);
+        int[] arr = new int[]{0,6,5,2,1,3,4};
+        BubbleSort.applySort(arr, "desc");
+        System.out.println(Arrays.toString(arr));
     }
 
     public static People people() {
