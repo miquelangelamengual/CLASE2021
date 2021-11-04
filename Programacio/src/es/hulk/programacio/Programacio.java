@@ -20,7 +20,7 @@ public class Programacio {
         ArraysExercises arr = new ArraysExercises();
         LoopsExercises loops = new LoopsExercises();
 
-        loops.calculAveraged();
+        loops.markCalculation();
     }
 
     public static People people() {

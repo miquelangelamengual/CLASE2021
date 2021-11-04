@@ -20,4 +20,14 @@ public class Utils {
         }
     }
 
+    public void isHigherOrLower(int playerNum, int hiddenNum) {
+        if (playerNum > hiddenNum) {
+            Color.printColor("newline", "red", "This number is higher than the number i want");
+        }
+
+        if (playerNum < hiddenNum) {
+            Color.printColor("newline", "red", "This number is lower than the number i want");
+        }
+    }
+
 }

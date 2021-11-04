@@ -3,6 +3,7 @@ package es.hulk.programacio.exercises;
 import es.hulk.programacio.utils.Color;
 import es.hulk.programacio.utils.Utils;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Scanner;
 public class LoopsExercises {
 
     private Scanner scanner = new Scanner(System.in);
+    private final int MAX_COUNT = 10;
 
     public void printNumbers() {
         int x = scanner.nextInt();
@@ -109,4 +111,126 @@ public class LoopsExercises {
         Color.printColor("newline", "blue", "Result: " + (double) total / counter);
     }
 
+    public void numStop() {
+        int counter = 1;
+        int num = 10;
+        int mult = 1;
+
+        for (int i = 1; i < num; i++) {
+            if (counter > num) {
+                break;
+            }
+            counter = counter + 2;
+            mult *= counter;
+            Color.printColor("newline", "blue", "Counter: " + counter);
+        }
+
+        Color.printColor("newline", "green", "Product: " + mult);
+    }
+
+    public void doingAGame() {
+        Random random = new Random();
+        int attempts = 0;
+        int hiddenNum = random.nextInt(100);
+
+        Color.printColor("line", "purple", "Put a number and try to win: ");
+        int playerNum = scanner.nextInt();
+        Utils.isHigherOrLower(playerNum, hiddenNum);
+        attempts++;
+
+        if (playerNum == hiddenNum) {
+            Color.printColor("newline", "green", "You win this game, good job.");
+            Color.printColor("newline", "blue", "Attempts done: " + attempts);
+            return;
+        }
+
+        while (playerNum != hiddenNum) {
+            Color.printColor("line", "purple", "Put a number and try to win: ");
+            playerNum = scanner.nextInt();
+
+            Utils.isHigherOrLower(playerNum, hiddenNum);
+
+            if (playerNum == hiddenNum) {
+                Color.printColor("newline", "green", "You win this game, good job.");
+                Color.printColor("newline", "blue", "Attempts done: " + attempts);
+                break;
+            }
+            attempts++;
+        }
+    }
+
+    public void tellMeAllNumbers() {
+        int counter = 0;
+        int negativeCounter = 0;
+        boolean isNegative = false;
+
+        for (int i = 0; i < MAX_COUNT; i++) {
+            Color.printColor("line", "purple", "Number: ");
+            int num = scanner.nextInt();
+            if (num > 0) {
+                counter++;
+            } else {
+                isNegative = true;
+                negativeCounter++;
+            }
+        }
+
+        if (isNegative) {
+            Color.printColor("newline", "red", "Negative numbers found: " + negativeCounter);
+            Color.printColor("newline", "red", "Positive numbers found: " + counter);
+        } else {
+            Color.printColor("newline", "red", "Positive numbers found: " + counter);
+        }
+    }
+
+    public void askNumbers() {
+        int aux = 0;
+        int num;
+
+        for (int i = 0; i < MAX_COUNT; i++) {
+            Color.printColor("line", "purple", "Number: ");
+            num = scanner.nextInt();
+
+            if (num > aux) {
+                aux = num;
+            }
+        }
+        Color.printColor("newline", "blue", "Higher Number: " + aux);
+    }
+
+    public void markCalculation() {
+        int invalidMarks = 0;
+        int suspended = 0;
+        int approved = 0;
+        int sum = 0;
+
+        for (int i = 0; i < MAX_COUNT; i++) {
+            Color.printColor("line", "purple", "Number: ");
+            int num = scanner.nextInt();
+
+            if (num > 10 || num < 0) {
+                invalidMarks++;
+                sum+= num;
+                continue;
+            }
+
+            if (num < 5) {
+                suspended++;
+                sum+= num;
+            }
+
+            if (num == 10 || num < 5 || num == 5) {
+                approved++;
+            }
+        }
+
+        int validMarks = suspended + approved;
+        double avg = (double) sum / validMarks;
+
+        Color.printColor("newline", "blue", "Invalid Marks: " + invalidMarks);
+        Color.printColor("newline", "blue", "Valid Marks: " + validMarks);
+        Color.printColor("newline", "blue", "Approved: " + approved);
+        Color.printColor("newline", "blue", "Suspended: " + suspended);
+        Color.printColor("newline", "blue", "Average Valid Marks: " + avg);
+    }
 }
