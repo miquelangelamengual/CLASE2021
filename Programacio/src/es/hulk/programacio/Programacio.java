@@ -5,7 +5,6 @@ import es.hulk.programacio.exercises.ConditionalsExercises;
 import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
-import es.hulk.programacio.sortAlgorithms.BubbleSort;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -23,7 +22,6 @@ public class Programacio {
         LoopsExercises loops = new LoopsExercises();
 
         int[] arr = new int[]{0,6,5,2,1,3,4};
-        BubbleSort.applySort(arr, "desc");
         System.out.println(Arrays.toString(arr));
     }
 
