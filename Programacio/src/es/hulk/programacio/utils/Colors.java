@@ -2,8 +2,10 @@ package es.hulk.programacio.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.awt.*;
+
 @UtilityClass
-public class Color {
+public class Colors {
 
     private static final String reset = "\u001B[0m";
 
@@ -79,9 +81,8 @@ public class Color {
             }
         }
     }
-
     public static void noup() {
-        Color.printColor("newline","red", "You are doing something wrong");
+        Colors.printColor("newline","red", "You are doing something wrong");
     }
 
 }

@@ -1,6 +1,6 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.utils.Color;
+import es.hulk.programacio.utils.Colors;
 
 /**
  * Created by Hulk
@@ -14,9 +14,9 @@ public class ArraysExercises {
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                Color.printColor("line", "green", " [ + ] ");
+                Colors.printColor("line", "green", " [ + ] ");
             }
-            Color.printColor("newline", "green", "[ + ]");
+            Colors.printColor("newline", "green", "[ + ]");
         }
     }
 

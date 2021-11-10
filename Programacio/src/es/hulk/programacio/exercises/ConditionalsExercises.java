@@ -1,9 +1,7 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.utils.Color;
+import es.hulk.programacio.utils.Colors;
 
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -33,7 +31,7 @@ public class ConditionalsExercises extends Thread {
         if (x % 2 == 0) {
             System.out.println("This number is multiple of 2");
         } else {
-            Color.noup();
+            Colors.noup();
         }
     }
 
@@ -51,13 +49,13 @@ public class ConditionalsExercises extends Thread {
     public void dayOfWeek(String type) {
 
         if (!(type.equals("IF") || type.equals("SWITCH"))) {
-            Color.noup();
+            Colors.noup();
         }
 
         int day = scanner.nextInt();
 
         if (day > 7) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
@@ -123,9 +121,9 @@ public class ConditionalsExercises extends Thread {
         int hour = scanner.nextInt();
 
         if (hour < 8) {
-            Color.noup();
+            Colors.noup();
         } else if (hour > 23) {
-            Color.noup();
+            Colors.noup();
         }
 
         if (hour >= 8 && hour <= 12) {
@@ -152,12 +150,12 @@ public class ConditionalsExercises extends Thread {
         int mark = scanner.nextInt();
 
         if (mark > 11) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
         if (mark < -1) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
@@ -188,76 +186,76 @@ public class ConditionalsExercises extends Thread {
 
     public void dateTime() {
 
-        Color.printColor("line", "purple", "Put the day you want: ");
+        Colors.printColor("line", "purple", "Put the day you want: ");
         int d = scanner.nextInt();
 
-        Color.printColor("line", "purple", "Put the month you want: ");
+        Colors.printColor("line", "purple", "Put the month you want: ");
         int m = scanner.nextInt();
 
-        Color.printColor("line", "purple", "Put the year you want: ");
+        Colors.printColor("line", "purple", "Put the year you want: ");
         int y = scanner.nextInt();
 
         if (d > 30) {
-            Color.noup();
+            Colors.noup();
             return;
         }
         if (m > 12) {
-            Color.noup();
+            Colors.noup();
             return;
         }
         if (y > 3000) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
-        Color.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
+        Colors.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
     }
 
     public void dateTime_v2() {
 
-        Color.printColor("line", "purple", "Put the day you want: ");
+        Colors.printColor("line", "purple", "Put the day you want: ");
         int d = scanner.nextInt();
 
-        Color.printColor("line", "purple", "Put the month you want: ");
+        Colors.printColor("line", "purple", "Put the month you want: ");
         int m = scanner.nextInt();
 
-        Color.printColor("line", "purple", "Put the year you want: ");
+        Colors.printColor("line", "purple", "Put the year you want: ");
         int y = scanner.nextInt();
 
         if (d > 30) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
         if (m > 12) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
         if (y > 3000) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
         for (int i = 0; i < 13; i++) {
             if (i == 1 || i == 3 || i == 5 || i == 7 || i == 8 || i == 10 || i == 12) {
                 if (d > 31) {
-                    Color.noup();
+                    Colors.noup();
                     return;
                 }
             } else if (i == 2) {
                 if (d > 28) {
-                    Color.noup();
+                    Colors.noup();
                     return;
                 }
             } else {
                 if (d > 30) {
-                    Color.noup();
+                    Colors.noup();
                     return;
                 }
             }
         }
-        Color.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
+        Colors.printColor("newline", "green", "Your date is " + d + "/" + m + "/" + y);
     }
 
     public void getBestNumber() {
@@ -278,14 +276,14 @@ public class ConditionalsExercises extends Thread {
         int age = scanner.nextInt();
 
         if (age < 0) {
-            Color.noup();
+            Colors.noup();
             return;
         }
 
         if (age < 18) {
-            Color.printColor("newline", "red", "Your age is lower than 18, so you cannot go further");
+            Colors.printColor("newline", "red", "Your age is lower than 18, so you cannot go further");
         } else {
-            Color.printColor("newline", "green", "Your age is 18 or higher so congrats");
+            Colors.printColor("newline", "green", "Your age is 18 or higher so congrats");
         }
     }
 }

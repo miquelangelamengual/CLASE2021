@@ -22,9 +22,12 @@ public class Programacio {
         ArraysExercises arrays = new ArraysExercises();
         LoopsExercises loops = new LoopsExercises();
 
+
+
+        /*loops.countVowels();
         int[] arr = new int[]{0,6,5,2,1,3,4};
         InsertionSort.insertionSort(arr);
-        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));*/
     }
 
     public static People people() {

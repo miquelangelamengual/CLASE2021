@@ -10,18 +10,21 @@ public class InsertionSort {
 
     public static void insertionSort(int[] arr) {
         for (int i = 1; i < arr.length; i++) {
-            moveAndInsertInArray(arr, i);
+            insertLoop(arr, i);
         }
     }
 
-    private static void moveAndInsertInArray(int[] arr, int index) {
+
+    //Thats a method that move and insert numbers into a subarray to sort them.
+    private static void insertLoop(int[] arr, int index) {
         while (index > 0 && arr[index] < arr[index - 1]) {
-            swapItemsOfArray(arr, index);
+            swapItems(arr, index);
             index--;
         }
     }
 
-    private static void swapItemsOfArray(int[] arr, int index) {
+    //This method swap elements of array.
+    private static void swapItems(int[] arr, int index) {
         int temp = arr[index];
         arr[index] = arr[index - 1];
         arr[index - 1] = temp;
