@@ -27,7 +27,7 @@ public class Menu {
         option = scanner.nextInt();
         switch (option) {
             case 1:
-                Board board = new Board(12);
+                Board board = new Board(10);
                 board.initBoard();
                 board.printBoard();
                 break;

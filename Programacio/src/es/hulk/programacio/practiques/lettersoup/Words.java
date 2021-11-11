@@ -11,17 +11,19 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public final class Words {
 
-    public static String babosa = "BABOSA";
-    public static String blando = "BLANDO";
-    public static String camisas = "CAMISAS";
-    public static String equitacion = "EQUITACION";
-    public static String marcadores = "MARCADORES";
-    public static String melocotonero = "MELOCOTONERO";
-    public static String oslo = "OSLO";
-    public static String pasillo = "PASILLO";
-    public static String pestañas = "PESTAÑAS";
-    public static String sibelius = "SIBELIUS";
-    public static String suecia = "SUECIA";
-    public static String tormenta = "TORMENTA";
+    String tormenta = "TORMENTA";
+    String suecia = "SUECIA";
+    String sibelius = "SIBELIUS";
+    String pestañas = "PESTAÑAS";
+    String pasillo = "PASILLO";
+    String oslo = "OSLO";
+    String melocotonero = "MELOCOTONERO";
+    String marcadores = "MARCADORES";
+    String equitacion = "EQUITACION";
+    String camisas = "CAMISAS";
+    String blando = "BLANDO";
+    String babosa = "BABOSA";
+
+    public String[] words = {tormenta, suecia, sibelius, pestañas, pasillo, oslo, melocotonero, marcadores, equitacion, camisas, blando, babosa};
 }
 

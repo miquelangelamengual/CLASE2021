@@ -1,13 +1,8 @@
 package es.hulk.programacio;
 
-import es.hulk.programacio.exercises.ArraysExercises;
-import es.hulk.programacio.exercises.ConditionalsExercises;
-import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
-import es.hulk.programacio.sortAlgorithms.InsertionSort;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -18,16 +13,6 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        ConditionalsExercises conditions = new ConditionalsExercises();
-        ArraysExercises arrays = new ArraysExercises();
-        LoopsExercises loops = new LoopsExercises();
-
-
-
-        /*loops.countVowels();
-        int[] arr = new int[]{0,6,5,2,1,3,4};
-        InsertionSort.insertionSort(arr);
-        System.out.println(Arrays.toString(arr));*/
     }
 
     public static People people() {

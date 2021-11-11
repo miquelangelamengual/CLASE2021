@@ -4,6 +4,7 @@ import es.hulk.programacio.utils.Colors;
 
 import java.util.Locale;
 import java.util.Random;
+import java.util.Scanner;
 
 /**
  * Created by Hulk
@@ -24,55 +25,21 @@ public class Board {
 
     public void initBoard() {
 
-        for (int i = 0; i < Words.babosa.length(); i++) {
-            board[0][i] = Words.babosa.charAt(i);
-        }
-
-        for (int i = 0; i < Words.blando.length(); i++) {
-            board[1][i] = Words.blando.charAt(i);
-        }
-
-        for (int i = 0; i < Words.camisas.length(); i++) {
-            board[2][i] = Words.camisas.charAt(i);
-        }
-
-        for (int i = 0; i < Words.oslo.length(); i++) {
-            board[5][i] = Words.oslo.charAt(i);
-        }
-
-        for (int i = 0; i < Words.pasillo.length(); i++) {
-            board[7][i] = Words.pasillo.charAt(i);
-        }
-
-        for (int i = 0; i < Words.pestañas.length(); i++) {
-            board[8][i] = Words.pestañas.charAt(i);
-        }
-
-        for (int i = 0; i < Words.sibelius.length(); i++) {
-            board[9][i] = Words.sibelius.charAt(i);
-        }
-
-        for (int i = 0; i < Words.suecia.length(); i++) {
-            board[10][i] = Words.suecia.charAt(i);
-        }
-
-        for (int i = 0; i < Words.tormenta.length(); i++) {
-            board[11][i] = Words.tormenta.charAt(i);
-        }
     }
 
     public void printBoard() {
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board.length; j++) {
                 if (board[i][j] != '\u0000') {
-                    Colors.printColor("line", "reset", " [ " + board[i][j] + " ] ");
+                    Colors.printColor("line", "reset", " [ " + Colors.getYellow() + board[i][j] + Colors.getReset() + " ] ");
                 } else {
                     board[i][j] = randomLetter();
-                    Colors.printColor("line", "reset", " [ " + board[i][j] + " ] ");
+                    Colors.printColor("line", "reset", " [ " + Colors.getYellow() + board[i][j] + Colors.getReset() + " ] ");
                 }
             }
             System.out.println();
         }
+        getWords();
     }
 
     private char randomLetter() {
@@ -82,7 +49,20 @@ public class Board {
     }
 
     public void getWords() {
+        Scanner scanner = new Scanner(System.in);
+        int x = scanner.nextInt();
+        int y = scanner.nextInt();
+        int x2 = scanner.nextInt();
+        int y2 = scanner.nextInt();
 
+        String word = "";
+        for (int i = x; i <= x2; i++) {
+            for (int j = y; j <= y2; j++) {
+                word += board[i][j];
+            }
+        }
+        Colors.printColor("newline", "purple", "The word is: " + Colors.getCyan() + word);
+        printBoard();
     }
 
 }

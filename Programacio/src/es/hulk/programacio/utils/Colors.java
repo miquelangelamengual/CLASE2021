@@ -1,21 +1,29 @@
 package es.hulk.programacio.utils;
 
+import lombok.Getter;
 import lombok.experimental.UtilityClass;
-
-import java.awt.*;
 
 @UtilityClass
 public class Colors {
 
+    @Getter
     private static final String reset = "\u001B[0m";
 
+    @Getter
     private static final String black = "\u001B[30m";
+    @Getter
     private static final String red = "\u001B[31m";
+    @Getter
     private static final String green = "\u001B[32m";
+    @Getter
     private static final String yellow = "\u001B[33m";
+    @Getter
     private static final String blue = "\u001B[34m";
+    @Getter
     private static final String purple = "\u001B[35m";
+    @Getter
     private static final String cyan = "\u001B[36m";
+    @Getter
     private static final String white = "\u001B[37m";
 
     public static void printColor(String mode, String color, String text) {
@@ -81,8 +89,9 @@ public class Colors {
             }
         }
     }
+
     public static void noup() {
-        Colors.printColor("newline","red", "You are doing something wrong");
+        Colors.printColor("newline", "red", "You are doing something wrong");
     }
 
 }
