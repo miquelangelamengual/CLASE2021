@@ -14,7 +14,6 @@ public class InsertionSort {
         }
     }
 
-
     //Thats a method that move and insert numbers into a subarray to sort them.
     private static void insertLoop(int[] arr, int index) {
         while (index > 0 && arr[index] < arr[index - 1]) {
