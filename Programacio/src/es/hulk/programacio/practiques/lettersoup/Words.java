@@ -9,12 +9,12 @@ import lombok.experimental.UtilityClass;
  * By: github.com/miquelangelamengual
  */
 @UtilityClass
-public class Words {
+public final class Words {
 
     public static String babosa = "BABOSA";
     public static String blando = "BLANDO";
     public static String camisas = "CAMISAS";
-    public static String equitacion = "EQUITACIÓN";
+    public static String equitacion = "EQUITACION";
     public static String marcadores = "MARCADORES";
     public static String melocotonero = "MELOCOTONERO";
     public static String oslo = "OSLO";
