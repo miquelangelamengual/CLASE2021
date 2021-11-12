@@ -1,6 +1,6 @@
 package es.hulk.programacio.practiques;
 
-import es.hulk.programacio.practiques.lettersoup.Menu;
+import es.hulk.programacio.practiques.lettersoup.Board;
 
 /**
  * Created by Hulk
@@ -11,7 +11,9 @@ import es.hulk.programacio.practiques.lettersoup.Menu;
 public class LetterSoup {
 
     public static void main(String[] args) {
-        Menu.mainMenu();
+        Board board = new Board();
+        board.initBoard();
+        board.printBoard();
     }
 
 }
