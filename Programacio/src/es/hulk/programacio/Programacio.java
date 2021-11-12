@@ -13,6 +13,7 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
+        System.out.println("a");
     }
 
     public static People people() {

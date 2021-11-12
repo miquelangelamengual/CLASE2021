@@ -1,12 +1,5 @@
 package es.hulk.programacio.practiques.lettersoup;
 
-import es.hulk.programacio.utils.Colors;
-import lombok.Getter;
-
-import java.util.Locale;
-import java.util.Random;
-import java.util.Scanner;
-
 /**
  * Created by Hulk
  * At 10/11/21 12:35
@@ -15,12 +8,11 @@ import java.util.Scanner;
 
 public class Board {
 
-    private final int corner = 10;
-    private int size;
-    private char[][] board = new char[10][10];
+    private final int SIZE = 10;
+    private final char[][] board = new char[SIZE][SIZE];
+    private final String[] words = {"AVISPA", "AVION", "NEVERA", "VACA", "VASO", "VELETA", "VERANO"};
 
     public Board() {
-        this.size = 10;
         initBoard();
     }
 
@@ -62,7 +54,7 @@ public class Board {
         board[2][7] = 'A';
         board[2][8] = 'K';
         board[2][9] = 'H';
-79
+
         // FOURTH COLUMN
         board[3][0] = 'O';
         board[3][1] = 'V';
@@ -150,8 +142,8 @@ public class Board {
 
     //Method to print the board
     public void printBoard() {
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 System.out.print(" [ " + board[i][j] + " ]");
             }
             System.out.println();

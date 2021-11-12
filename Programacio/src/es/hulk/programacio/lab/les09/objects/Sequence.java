@@ -1,7 +1,5 @@
 package es.hulk.programacio.lab.les09.objects;
 
-import static com.sun.org.apache.xerces.internal.impl.dtd.models.SimpleContentModel.SEQUENCE;
-
 /**
  * Created by Hulk
  * at 04/10/2021 11:41
