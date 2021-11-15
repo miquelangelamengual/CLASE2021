@@ -1,5 +1,6 @@
 package es.hulk.programacio;
 
+import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -13,8 +14,9 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        System.out.println("a");
+        LoopsExercises loop = new LoopsExercises();
     }
+
 
     public static People people() {
         People people = new People();

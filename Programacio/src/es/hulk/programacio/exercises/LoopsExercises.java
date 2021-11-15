@@ -278,7 +278,6 @@ public class LoopsExercises {
         Colors.printColor("newline", "blue", "Number of words: " + count);
     }
 
-    //Method that counts how many 'a' char appear
     public void countLetterA() {
         String str = scanner.nextLine();
         int count = 0;
@@ -304,6 +303,5 @@ public class LoopsExercises {
         }
         Colors.printColor("newline", "blue", "Number of vowels: " + count);
     }
-
 
 }

@@ -1,5 +1,10 @@
 package es.hulk.programacio.practiques.lettersoup;
 
+import es.hulk.programacio.utils.Colors;
+import lombok.Getter;
+
+import java.util.Locale;
+
 /**
  * Created by Hulk
  * At 10/11/21 12:35
@@ -10,7 +15,7 @@ public class Board {
 
     private final int SIZE = 10;
     private final char[][] board = new char[SIZE][SIZE];
-    private final String[] words = {"AVISPA", "AVION", "NEVERA", "VACA", "VASO", "VELETA", "VERANO"};
+    @Getter private static final String[] words = {"AVISPA", "AVION", "NEVERA", "VACA", "VASO", "VELETA", "VERANO"};
 
     public Board() {
         initBoard();
@@ -144,38 +149,32 @@ public class Board {
     public void printBoard() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                System.out.print(" [ " + board[i][j] + " ]");
+                Colors.printLine( "reset", " [ " + Colors.getYellow() + board[i][j] + Colors.getReset() + " ]");
             }
             System.out.println();
         }
     }
 
-    /*
-         public void printBoard() {
-         for (int i = 0; i < board.length; i++) {
-         for (int j = 0; j < board.length; j++) {
-         if (board[i][j] != '\u0000') {
-         Colors.printColor("line", "reset", " [ " + Colors.getYellow() + board[i][j] + Colors.getReset() + " ] ");
-         } else if (board[i][j] == '-') {
-         Colors.printColor("line", "reset", " [ " + Colors.getYellow() + "-" + Colors.getReset() + " ] ");
-         }
-         else {
-         board[i][j] = randomLetter();
-         Colors.printColor("line", "reset", " [ " + Colors.getYellow() + board[i][j] + Colors.getReset() + " ] ");
-         }
-         }
-         System.out.println();
-         }
-         }
+    public boolean isWord(String word) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word.toUpperCase(Locale.ROOT))) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-         private char randomLetter() {
-         Random r = new Random();
-         int random = r.nextInt(size);
-         return letter[random];
-         }
+    // Metodo para ver como esta alineada la palabra
+    public char getAlignment(String word) {
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].equals(word.toUpperCase(Locale.ROOT))) {
+                return alignments[i];
+            }
+        }
+        return ' ';
+    }
 
-         public void selectChars() {
-         }
-     */
+    //alignments array
+    public char[] alignments = {'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V'};
 
 }
