@@ -1,6 +1,6 @@
 package es.hulk.programacio.practiques.lettersoup;
 
-import es.hulk.programacio.practiques.lettersoup.Board;
+import es.hulk.programacio.utils.Colors;
 
 /**
  * Created by Hulk
@@ -12,18 +12,22 @@ public class LetterSoup {
 
     public static void main(String[] args) {
         Board board = new Board();
-        board.initBoard();
         board.printBoard();
         System.out.println();
 
-        for (int i = 0; i < Board.getWords().length; i++) {
-            if (board.isWord(Board.getWords()[i]) && board.getAlignment(Board.getWords()[i]) != ' ')  {
-                System.out.println(Board.getWords()[i] + " its on the board");
-                System.out.println("Alignment: " + board.getAlignment(Board.getWords()[i]));
+        for (String str : Board.getWords())
+            if (board.isWord(str)) {
+                Colors.printNewLine("purple", str + " its on the board");
+                if (board.getAlignment() != ' ') {
+                    if (board.getAlignment() == 'H') {
+                        Colors.printNewLine("purple", "Alignment is Horizontal");
+                    } else if (board.getAlignment() == 'V') {
+                        Colors.printNewLine("purple", "Alignment is Vertical");
+                    }
+                }
+                System.out.println();
             } else {
-                System.out.println(Board.getWords()[i] + " its not on the board");
+                System.out.println(str + " its not on the board");
             }
-        }
     }
-
 }

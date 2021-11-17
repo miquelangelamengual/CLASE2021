@@ -15,6 +15,7 @@ public class Board {
 
     private final int SIZE = 10;
     private final char[][] board = new char[SIZE][SIZE];
+    public char[] alignments = {'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V'};
     @Getter private static final String[] words = {"AVISPA", "AVION", "NEVERA", "VACA", "VASO", "VELETA", "VERANO"};
 
     public Board() {
@@ -163,18 +164,17 @@ public class Board {
         }
         return false;
     }
-
     // Metodo para ver como esta alineada la palabra
-    public char getAlignment(String word) {
-        for (int i = 0; i < words.length; i++) {
-            if (words[i].equals(word.toUpperCase(Locale.ROOT))) {
-                return alignments[i];
+
+    public char getAlignment() {
+        for (String str : words) {
+            for (int i = 0; i < words.length; i++) {
+                if (words[i].equals(str.toUpperCase(Locale.ROOT))) {
+                    return alignments[i];
+                }
             }
         }
         return ' ';
     }
-
-    //alignments array
-    public char[] alignments = {'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V'};
 
 }
