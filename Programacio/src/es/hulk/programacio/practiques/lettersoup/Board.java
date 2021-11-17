@@ -15,7 +15,6 @@ public class Board {
 
     private final int SIZE = 10;
     private final char[][] board = new char[SIZE][SIZE];
-    public char[] alignments = {'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V', 'H', 'V'};
     @Getter private static final String[] words = {"AVISPA", "AVION", "NEVERA", "VACA", "VASO", "VELETA", "VERANO"};
 
     public Board() {
