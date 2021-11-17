@@ -146,7 +146,6 @@ public class Board {
         board[9][9] = 'D';
     }
 
-    //Method to print the board
     public void printBoard() {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
@@ -163,18 +162,6 @@ public class Board {
             }
         }
         return false;
-    }
-    // Metodo para ver como esta alineada la palabra
-
-    public char getAlignment() {
-        for (String str : words) {
-            for (int i = 0; i < words.length; i++) {
-                if (words[i].equals(str.toUpperCase(Locale.ROOT))) {
-                    return alignments[i];
-                }
-            }
-        }
-        return ' ';
     }
 
 }
