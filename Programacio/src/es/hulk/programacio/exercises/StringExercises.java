@@ -6,7 +6,7 @@ package es.hulk.programacio.exercises;
  * By: github.com/miquelangelamengual
  */
 
-public class StingExercises {
+public class StringExercises {
 
     public static void ex1() {
         String c1 = null;

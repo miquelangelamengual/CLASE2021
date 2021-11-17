@@ -1,6 +1,6 @@
 package es.hulk.programacio;
 
-import es.hulk.programacio.exercises.StingExercises;
+import es.hulk.programacio.exercises.StringExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        StingExercises.ex4();
+        StringExercises.ex4();
     }
 
 
