@@ -132,7 +132,7 @@ public class ArraysExercises {
         boolean isAsc = true;
         boolean isDesc = true;
 
-        for (int i = 0; i < array.length -1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             if (array[i] > array[i + 1]) {
                 isAsc = false;
             } else if (array[i] < array[i + 1]) {
@@ -208,5 +208,17 @@ public class ArraysExercises {
         }
 
         System.out.println("Number of letter x found: " + count);
+    }
+
+    public void searchNumberIntoArray() {
+        int[] array = {2, 4, 7, 1, 8, 9, 3, 5, 6};
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == num) {
+                System.out.println("Number found at index: " + i);
+            }
+        }
     }
 }
