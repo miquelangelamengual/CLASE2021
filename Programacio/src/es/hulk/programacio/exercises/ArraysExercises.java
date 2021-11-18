@@ -1,5 +1,6 @@
 package es.hulk.programacio.exercises;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -111,17 +112,101 @@ public class ArraysExercises {
     }
 
     public void insertArraysIntoOne() {
-        int [] arrayA = {3, 4, 1};
-        int [] arrayB = {2, 7, 5};
-        int [] arrayC = new int[arrayA.length + arrayB.length];
+        int[] arrayA = {3, 4, 1};
+        int[] arrayB = {2, 7, 5};
+        int[] arrayC = new int[6];
 
-        for (int i = 0; i < arrayC.length - 1; i++) {
-            arrayC[i + 1] = arrayA[i];
-            arrayC[i + 2] = arrayB[i];
+        for (int i = 0; i < 3; i++) {
+            arrayC[i * 2] = arrayA[i];
+            arrayC[i * 2 + 1] = arrayB[i];
         }
 
         for (int i = 0; i < arrayC.length; i++) {
             System.out.print(arrayC[i] + " ");
         }
+    }
+
+    public void isArraySorted() {
+        int[] array = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        boolean isAsc = true;
+        boolean isDesc = true;
+
+        for (int i = 0; i < array.length -1; i++) {
+            if (array[i] > array[i + 1]) {
+                isAsc = false;
+            } else if (array[i] < array[i + 1]) {
+                isDesc = false;
+            }
+        }
+
+        if (isAsc) {
+            System.out.println("Ascending");
+        } else if (isDesc) {
+            System.out.println("Descending");
+        } else {
+            System.out.println("Not Sorted");
+        }
+    }
+
+    public void introduceNumbersTill0() {
+        ArrayList<Integer> positives = new ArrayList<>();
+        ArrayList<Integer> negatives = new ArrayList<>();
+
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+
+        while (num != 0) {
+            num = scanner.nextInt();
+            if (num > 0) {
+                positives.add(num);
+            } else if (num < 0) {
+                negatives.add(num);
+            }
+        }
+
+        System.out.println("Positive numbers: " + positives);
+        System.out.println("Negative numbers: " + negatives);
+    }
+
+    public void saveCharIntoArray() {
+        char[] array = new char[5];
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.next().charAt(0);
+        }
+
+        for (char c : array) {
+            if (c == 'x') {
+                count++;
+            }
+            System.out.print(c + " ");
+        }
+
+        System.out.println("Number of letter x found: " + count);
+    }
+
+    public void countXonCharArray() {
+        char[] array = new char[5];
+        Scanner scanner = new Scanner(System.in);
+        int count = 0;
+        boolean yFound = false;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = scanner.next().charAt(0);
+        }
+
+        for (char c : array) {
+            if (c == 'y') {
+                yFound = true;
+            }
+            if (yFound && c == 'x') {
+                count++;
+            }
+        }
+
+        System.out.println("Number of letter x found: " + count);
     }
 }

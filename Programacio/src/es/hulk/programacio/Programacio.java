@@ -1,6 +1,7 @@
 package es.hulk.programacio;
 
 import es.hulk.programacio.exercises.ArraysExercises;
+import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -15,7 +16,7 @@ public class Programacio {
 
     public static void main(String[] args) {
         ArraysExercises array = new ArraysExercises();
-        array.averageCalculate();
+        array.countXonCharArray();
     }
 
 
