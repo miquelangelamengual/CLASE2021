@@ -87,4 +87,17 @@ public class StringExercises {
         return (x < y ? x + 1 : x - 1);
     }
 
+    public static int metodoA(int[] vec, int pos) {
+        int sum = 0;
+        int i = 0;
+        while (i < pos) {
+            sum = sum + vec[i];
+            i += 1;
+        }
+        return sum;
+    }
+
+    //Array no inicializada en los parametros, estaba en void lo q el return no servia para nada, el int i no esta inicializado y el bucle es infinito
+
+
 }
