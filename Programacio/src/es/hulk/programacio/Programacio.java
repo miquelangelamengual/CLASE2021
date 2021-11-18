@@ -1,6 +1,6 @@
 package es.hulk.programacio;
 
-import es.hulk.programacio.exercises.StringExercises;
+import es.hulk.programacio.exercises.ArraysExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -14,7 +14,8 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        StringExercises.ex4();
+        ArraysExercises array = new ArraysExercises();
+        array.averageCalculate();
     }
 
 
