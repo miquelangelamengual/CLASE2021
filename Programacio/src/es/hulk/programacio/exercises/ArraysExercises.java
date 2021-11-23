@@ -164,9 +164,12 @@ public class ArraysExercises {
                 negatives.add(num);
             }
         }
-
-        System.out.println("Positive numbers: " + positives);
-        System.out.println("Negative numbers: " + negatives);
+        System.out.println("Positive numbers: " + positives.toString()
+                .replace("[", "")
+                .replace("]", ""));
+        System.out.println("Negative numbers: " + negatives.toString()
+                .replace("[", "")
+                .replace("]", ""));
     }
 
     public void saveCharIntoArray() {

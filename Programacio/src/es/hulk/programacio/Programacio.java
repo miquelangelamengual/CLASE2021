@@ -16,7 +16,7 @@ public class Programacio {
 
     public static void main(String[] args) {
         ArraysExercises array = new ArraysExercises();
-        array.searchNumberIntoArray();
+        array.introduceNumbersTill0();
     }
 
 
