@@ -35,4 +35,11 @@ public class Alumne {
         }
         System.out.println("La mitjana de les notes de l'assignatura " + nom + " és: " + (suma / notas.length));
     }
+
+    public void printAlumne() {
+        System.out.println("ID: " + id);
+        System.out.println("Nom: " + nom);
+        System.out.println("Edat: " + edat);
+        System.out.println("Notas: " + notas);
+    }
 }

@@ -17,7 +17,7 @@ public class Assignatura {
     private String nom;
     ArrayList<Alumne> alumnes;
 
-    public Assignatura(String nom) {
+    public Assignatura(String nom, ArrayList<Alumne> alumnes) {
         this.nom = nom;
         this.alumnes = new ArrayList<>();
     }
@@ -43,5 +43,15 @@ public class Assignatura {
             }
         }
         return alumne;
+    }
+
+    public void printAssignatura() {
+        System.out.println("Assignatura: " + nom);
+    }
+
+    public void printAlumnes() {
+        for (Alumne alumne : alumnes) {
+            System.out.println("Nom: " + alumne.getNom());
+        }
     }
 }
