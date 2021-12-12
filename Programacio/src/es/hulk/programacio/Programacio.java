@@ -16,9 +16,8 @@ public class Programacio {
 
     public static void main(String[] args) {
         ArraysExercises array = new ArraysExercises();
-        array.introduceNumbersTill0();
+        System.out.println(array.countChars("Hola q tal, baneit fill de puta"));
     }
-
 
     public static People people() {
         People people = new People();

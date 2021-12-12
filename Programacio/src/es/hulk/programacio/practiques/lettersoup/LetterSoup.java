@@ -15,12 +15,13 @@ public class LetterSoup {
         board.printBoard();
         System.out.println();
 
-        for (String str : Board.getWords())
+        for (String str : Board.getWords()) {
             if (board.isWord(str)) {
                 Colors.printNewLine("purple", str + " its on the board");
                 System.out.println();
             } else {
                 System.out.println(str + " its not on the board");
             }
+        }
     }
 }

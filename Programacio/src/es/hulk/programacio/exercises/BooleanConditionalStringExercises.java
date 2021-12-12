@@ -7,11 +7,6 @@ package es.hulk.programacio.exercises;
 
 public class BooleanConditionalStringExercises {
 
-
-    public static void main(String[] args) {
-        isEqual();
-    }
-
     public static void isEqual() {
         boolean result;
         int x = 5;

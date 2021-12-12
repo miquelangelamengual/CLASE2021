@@ -224,4 +224,19 @@ public class ArraysExercises {
             }
         }
     }
+
+    public int countChars(String str) {
+        int counter = 0;
+        char[] chars = {' ', '?', ','};
+        for (int i = 0; i < str.length(); i++) {
+            for (char c : chars) {
+                if (str.charAt(i) == c) {
+                    counter--;
+                }
+            }
+            counter++;
+        }
+
+        return counter;
+    }
 }

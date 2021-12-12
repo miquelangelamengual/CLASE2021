@@ -95,30 +95,18 @@ public class ExamenPractica {
     }
 
     public static int searchIndex(int[] array, int index) {
-        int aux = 0;
-
         for (int i = 0; i < array.length; i++) {
             if (array[i] == index) {
-                aux++;
+                return i;
             }
         }
 
-        if (aux >= 2) {
-            return 0;
-        } else {
-            return -1;
-        }
+        return -1;
     }
 
     public static int searchNumberThatsCloseToAverageCalulation(int[] array) {
-        int count = 0;
+        int average = averageArrayCalulation(array);
         int aux = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            count += array[i];
-        }
-
-        int average = count / array.length;
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] > average - 1 && array[i] < average + 1) {
