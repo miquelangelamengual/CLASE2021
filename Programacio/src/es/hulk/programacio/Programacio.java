@@ -1,6 +1,7 @@
 package es.hulk.programacio;
 
 import es.hulk.programacio.exercises.ArraysExercises;
+import es.hulk.programacio.exercises.ExceptionExercises;
 import es.hulk.programacio.exercises.LoopsExercises;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
@@ -15,8 +16,7 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        ArraysExercises array = new ArraysExercises();
-        array.introduceNumbersTill0();
+        ExceptionExercises.ex5();
     }
 
 

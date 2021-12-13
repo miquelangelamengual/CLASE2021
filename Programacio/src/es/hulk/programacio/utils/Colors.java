@@ -1,5 +1,6 @@
 package es.hulk.programacio.utils;
 
+import es.hulk.programacio.exercises.ExceptionExercises;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 
@@ -157,6 +158,10 @@ public class Colors {
 
     public static void noup() {
         Colors.printNewLine("red", "You are doing something wrong");
+    }
+
+    public static void error(Exception e) {
+        Colors.printNewLine("red", "ERROR: " + e);
     }
 
 }

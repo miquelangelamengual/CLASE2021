@@ -8,18 +8,18 @@ package es.hulk.programacio.examens;
 
 public class ExamenPractica {
 
-    public static int averageArrayCalulation(int[] array) {
+    public static float averageArrayCalulation(int[] array) {
         int counter = 0;
 
         for (int i = 0; i < array.length; i++) {
             counter += array[i];
         }
 
-        return counter / array.length;
+        return (float) counter / array.length;
     }
 
     public static int minimumNumberIntoArray(int[] array) {
-        int aux = 0;
+        int aux = array[0];
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] < aux) {
@@ -31,15 +31,13 @@ public class ExamenPractica {
 
     public static int minimumIndexIntoArray(int[] array) {
         int aux = 0;
-        int index = 0;
 
         for (int i = 0; i < array.length; i++) {
-            if (array[i] < aux) {
-                aux = array[i];
-                index = i;
+            if (array[i] < array[aux]) {
+                aux = i;
             }
         }
-        return index;
+        return aux;
     }
 
     public static int maximumNumberIntoArray(int[] array) {
@@ -68,20 +66,20 @@ public class ExamenPractica {
 
     public static boolean isArraySortedAsc(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] < array[i + 1]) {
-                return true;
+            if (array[i] > array[i + 1]) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static boolean isArraySortedDesc(int[] array) {
         for (int i = 0; i < array.length - 1; i++) {
-            if (array[i] > array[i + 1]) {
-                return true;
+            if (array[i] < array[i + 1]) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public static int[] reverseArray(int[] array) {
@@ -95,34 +93,23 @@ public class ExamenPractica {
     }
 
     public static int searchIndex(int[] array, int index) {
-        int aux = 0;
-
         for (int i = 0; i < array.length; i++) {
             if (array[i] == index) {
-                aux++;
+                return i;
             }
         }
 
-        if (aux >= 2) {
-            return 0;
-        } else {
-            return -1;
-        }
+        return -1;
     }
 
     public static int searchNumberThatsCloseToAverageCalulation(int[] array) {
-        int count = 0;
         int aux = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            count += array[i];
-        }
-
-        int average = count / array.length;
+        int average = (int) averageArrayCalulation(array);
 
         for (int i = 0; i < array.length; i++) {
             if (array[i] > average - 1 && array[i] < average + 1) {
                 array[i] = average;
+                aux = array[i];
             }
         }
         return aux;

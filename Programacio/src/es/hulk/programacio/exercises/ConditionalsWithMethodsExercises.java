@@ -1,5 +1,7 @@
 package es.hulk.programacio.exercises;
 
+import es.hulk.programacio.utils.Colors;
+
 /**
  * Created by Hulk
  * At 24/11/21 9:52
@@ -53,7 +55,7 @@ public class ConditionalsWithMethodsExercises {
         }
     }
 
-    public static String houtTime(int hour) {
+    public static String hourTime(int hour) {
         if (hour >= 8 && hour <= 12) {
             return "Mati";
         }
@@ -94,6 +96,29 @@ public class ConditionalsWithMethodsExercises {
             return "Excelent";
         }
         return null;
+    }
+
+    public boolean dateTime(int d, int m, int y) {
+
+        if (d > 30) {
+            return false;
+        }
+        if (m > 12) {
+            return false;
+        }
+        if (y > 3000) {
+            return false;
+        }
+
+        return true;
+    }
+
+    public static String checkAge(int age) {
+        if (age >= 18) {
+            return "Major";
+        } else {
+            return "Menor";
+        }
     }
 
 
