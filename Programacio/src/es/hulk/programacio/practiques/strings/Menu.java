@@ -29,11 +29,11 @@ public class Menu {
         System.out.println();
         System.out.println("1. Introduir un text nou.");
         System.out.println("2. Veure el text actual.");
-        System.out.println("3. Comptar el n ́umero de lletres.");
-        System.out.println("4. Comptar el n ́umero de paraules.");
-        System.out.println("5. N ́umero d’aparicions de cada car`acters.");
-        System.out.println("6. Dir el car`acter m ́es repetit i el n ́umero d’aparicions.");
-        System.out.println("7. Dir la paraula m ́es repetida i el n ́umero d’aparicions.");
+        System.out.println("3. Comptar el numero de lletres.");
+        System.out.println("4. Comptar el numero de paraules.");
+        System.out.println("5. N umero d’aparicions de cada car`acters.");
+        System.out.println("6. Dir el caracter mes repetit i el numero d’aparicions.");
+        System.out.println("7. Dir la paraula mes repetida i el numero d’aparicions.");
         System.out.println("8. Introduir per teclat un car`acter i dir quantes vegades apareix.");
         System.out.println("9. Introduir per teclat una paraula i dir quantes vegades apareix.");
         System.out.println(" ");
