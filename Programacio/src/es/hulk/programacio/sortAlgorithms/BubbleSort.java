@@ -8,7 +8,6 @@ package es.hulk.programacio.sortAlgorithms;
 public class BubbleSort {
 
     public static void applySort(int[] arr) {
-
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - i; j++) {
                 if (arr[j - 1] > arr[j]) {
@@ -19,5 +18,4 @@ public class BubbleSort {
             }
         }
     }
-
 }
