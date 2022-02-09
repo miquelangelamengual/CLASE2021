@@ -22,16 +22,16 @@ public class PrimerExamen {
     }
 
     public void printArray(char[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (char c : array) {
+            System.out.print(c + " ");
         }
     }
 
     public boolean isDelimiter(int index, char[] array) {
         for (int i = 0; i < array.length; i++) {
             if (i == index) {
-                for (int j = 0; j < delimiters.length; j++) {
-                    if (array[i] == delimiters[j]) {
+                for (char delimiter : delimiters) {
+                    if (array[i] == delimiter) {
                         return true;
                     }
                 }
@@ -42,17 +42,20 @@ public class PrimerExamen {
     }
 
     public boolean isStartOfWord(int index, char[] array) {
-
         for (int i = 0; i < array.length; i++) {
             if (i == index) {
-                for (int j = 0; j < delimiters.length; j++) {
-                    if (array[i - 1] == delimiters[j] || Character.isUpperCase(array[i])) {
+                for (char delimiter : delimiters) {
+                    if (array[i - 1] == delimiter || Character.isUpperCase(array[i])) {
                         return true;
                     }
                 }
             }
         }
-
         return false;
+    }
+
+    public int wordLength(int index, char[] array) {
+
+        return -1;
     }
 }

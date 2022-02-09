@@ -23,6 +23,7 @@ public class Rectangle {
             System.out.println("Rectangle created: width = " + width + " and height = " + height);
         } else {
             System.out.println("Invalid width and/or height. Each must be positive and less than 30.");
+            return;
         }
     }
 

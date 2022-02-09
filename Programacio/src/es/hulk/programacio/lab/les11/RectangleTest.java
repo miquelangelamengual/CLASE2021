@@ -11,11 +11,7 @@ import es.hulk.programacio.lab.les11.objects.Rectangle;
 
 public class RectangleTest {
     public static void main(String args[]) {
-        Rectangle r1 = new Rectangle();
-        r1.draw();
-
-        Rectangle r2 = new Rectangle(10, 30);
-        System.out.println("Area of r2: " + r2.getArea());
+        Rectangle r1 = new Rectangle(878362, 233);
         r1.draw();
     }// end main
 } // end class
