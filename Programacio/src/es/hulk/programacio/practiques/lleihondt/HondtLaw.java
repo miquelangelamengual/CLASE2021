@@ -1,5 +1,7 @@
 package es.hulk.programacio.practiques.lleihondt;
 
+import java.util.Arrays;
+
 /**
  * Created by Hulk
  * at 09/02/2022
@@ -110,6 +112,7 @@ public class HondtLaw {
         int[] votes = {120000, 100000, 40000, 5000, 2500};
 
         int[] results = init(8, names, votes, 3);
+        System.out.println(Arrays.toString(isMinimumVotes));
 
     }
 
