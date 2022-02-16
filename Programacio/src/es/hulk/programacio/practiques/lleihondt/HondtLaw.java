@@ -75,10 +75,10 @@ public class HondtLaw {
 
     private static void printTable() {
         float barrier = totalVotes(votesParties) * percentage;
-        for (int i = 0; i < coefficientsHondt.length; i++) {
-            for (int j = 0; j < coefficientsHondt[i].length; j++) {
-                if (coefficientsHondt[i][0] > barrier) {
-                    System.out.print(coefficientsHondt[i][j] + " ");
+        for (float[] floats : coefficientsHondt) {
+            for (float aFloat : floats) {
+                if (floats[0] > barrier) {
+                    System.out.print(aFloat + " ");
                 }
             }
             System.out.println();
