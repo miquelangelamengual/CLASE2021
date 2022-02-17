@@ -4,6 +4,7 @@ import es.hulk.programacio.exercises.ArraysExercises;
 import es.hulk.programacio.exercises.ExceptionExercises;
 import es.hulk.programacio.exercises.ExceptionExercisesTwo;
 import es.hulk.programacio.exercises.LoopsExercises;
+import es.hulk.programacio.exercises.revisio.LoopsRevision;
 import es.hulk.programacio.objects.Dog;
 import es.hulk.programacio.objects.People;
 
@@ -17,7 +18,7 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        ExceptionExercisesTwo.testString();
+        LoopsRevision.secondsToHours();
     }
 
     public static People people() {
