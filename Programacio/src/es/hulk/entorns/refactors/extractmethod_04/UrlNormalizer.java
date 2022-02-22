@@ -1,8 +1,6 @@
 package es.hulk.entorns.refactors.extractmethod_04;
 
 
-import java.util.Locale;
-
 public class UrlNormalizer {
 
 	public String normalize(String title) {

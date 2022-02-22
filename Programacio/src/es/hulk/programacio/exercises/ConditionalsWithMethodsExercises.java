@@ -1,7 +1,5 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.utils.Colors;
-
 /**
  * Created by Hulk
  * At 24/11/21 9:52

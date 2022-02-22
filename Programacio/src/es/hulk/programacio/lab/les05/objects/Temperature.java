@@ -1,7 +1,5 @@
 package es.hulk.programacio.lab.les05.objects;
 
-import java.time.temporal.Temporal;
-
 /**
  * Created by Hulk
  * at 30/09/2021 9:39

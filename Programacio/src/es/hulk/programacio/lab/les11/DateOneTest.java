@@ -3,7 +3,6 @@ package es.hulk.programacio.lab.les11;/*
  * and open the template in the editor.
  */
 
-import es.hulk.programacio.lab.les06.objects.PersonTwo;
 import es.hulk.programacio.lab.les11.objects.DateOne;
 
 /**

@@ -1,7 +1,6 @@
 package es.hulk.entorns.refactors.consolidateconditional_13;
 
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 

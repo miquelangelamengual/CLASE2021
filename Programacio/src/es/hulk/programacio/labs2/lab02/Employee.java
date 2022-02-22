@@ -1,7 +1,5 @@
 package es.hulk.programacio.labs2.lab02;
 
-import lombok.Data;
-
 public class Employee {
 
     private int employeeID;

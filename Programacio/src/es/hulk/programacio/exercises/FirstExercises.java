@@ -1,7 +1,5 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.Programacio;
-
 import java.util.Arrays;
 
 /**

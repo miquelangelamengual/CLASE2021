@@ -1,9 +1,7 @@
 package es.hulk.entorns.refactors.parameterobject_06;
 
 import java.util.Enumeration;
-import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Set;
 
 
 public class Order {

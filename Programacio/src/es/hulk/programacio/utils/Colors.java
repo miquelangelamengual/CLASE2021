@@ -1,6 +1,5 @@
 package es.hulk.programacio.utils;
 
-import es.hulk.programacio.exercises.ExceptionExercises;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 
