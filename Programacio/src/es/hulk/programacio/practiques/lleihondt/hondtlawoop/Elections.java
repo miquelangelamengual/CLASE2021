@@ -19,7 +19,7 @@ public class Elections {
         int var1 = 0;
 
         int[][] seats = new int[candidates.size()][numSeats];
-        System.out.println("Table of divided vots per party: ");
+        System.out.println("Table of divided votes per party: ");
         for (int k = 0; k < candidates.size(); k++) {
             if (!candidates.get(k).isExclosed()) {
                 System.out.print(candidates.get(k).getName() + " ");

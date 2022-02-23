@@ -68,17 +68,17 @@ public class CalculateHondt {
     }
 
     private void printOkayParties() {
-        System.out.println("\n" + "Escons per partit: ");
+        System.out.println("\n" + "Seats per party: ");
         for (Candidate candidature : candidates) {
-            System.out.println("El " + candidature.getName() + " te " + candidature.getSeats() + " escons");
+            System.out.println(candidature.getName() + " has " + candidature.getSeats() + " seats.");
         }
     }
 
     private void printExclosedParties() {
-        System.out.println("\n" + "Escons excluides ");
+        System.out.println("\n" + "Exclosed Parties: ");
         for (Candidate candidature : candidates) {
             if (candidature.isExclosed()) {
-                System.out.println("El " + candidature.getName() + " esta exclos. ");
+                System.out.println(candidature.getName() + " is exclosed for this elections. ");
             }
         }
     }
