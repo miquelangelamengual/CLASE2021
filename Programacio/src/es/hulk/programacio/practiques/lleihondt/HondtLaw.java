@@ -1,6 +1,7 @@
 package es.hulk.programacio.practiques.lleihondt;
 
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by Hulk
@@ -113,7 +114,7 @@ public class HondtLaw {
 
         int[] results = init(8, names, votes, 3);
         System.out.println(Arrays.toString(isMinimumVotes));
-
+        List<String> LIST = Arrays.asList(names);
     }
 
 }
