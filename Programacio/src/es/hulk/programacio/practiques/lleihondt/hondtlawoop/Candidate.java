@@ -12,12 +12,6 @@ public class Candidate extends Party {
         this.seats = seats;
     }
 
-    public Candidate(int votes, String name, boolean isExclosed) {
-        super(name);
-        this.votes = votes;
-        this.isExclosed = isExclosed;
-    }
-
     public void setExclosed(boolean exclosed) {
         isExclosed = exclosed;
     }

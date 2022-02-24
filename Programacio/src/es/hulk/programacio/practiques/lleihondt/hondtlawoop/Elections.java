@@ -11,14 +11,14 @@ public class Elections {
         this.candidates = candidates;
         this.numSeats = numSeats;
 
-        this.exceedPercentatge();
+        this.exceedPercentage();
         new CalculateHondt(candidates, this);
     }
 
     public int[][] dividingVotesInEscons() {
-        int var1 = 0;
-
         int[][] seats = new int[candidates.size()][numSeats];
+        int temp = 0;
+
         System.out.println("Table of divided votes per party: ");
         for (int k = 0; k < candidates.size(); k++) {
             if (!candidates.get(k).isExclosed()) {
@@ -26,10 +26,10 @@ public class Elections {
                 for (int j = 0; j < numSeats; j++) {
                     if (j == 0) {
                         seats[k][j] = candidates.get(k).getVotes();
-                        var1 = 2;
+                        temp = 2;
                     } else {
-                        seats[k][j] = candidates.get(k).getVotes() / var1;
-                        var1++;
+                        seats[k][j] = candidates.get(k).getVotes() / temp;
+                        temp++;
                     }
                     System.out.print(seats[k][j] + " | ");
                 }
@@ -41,16 +41,16 @@ public class Elections {
 
     private float percentatgeVotes() {
         int total = 0;
-        float percentatge = 0.03F;
+        float percentage = 0.03F;
 
         for (Candidate candidature : candidates) {
             total += candidature.getVotes();
         }
 
-        return total * percentatge;
+        return total * percentage;
     }
 
-    private void exceedPercentatge() {
+    private void exceedPercentage() {
         for (Candidate candidature : candidates) {
             if (candidature.getVotes() < percentatgeVotes()) {
                 candidature.setExclosed(true);

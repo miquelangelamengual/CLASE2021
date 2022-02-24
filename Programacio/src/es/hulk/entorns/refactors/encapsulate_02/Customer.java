@@ -2,8 +2,8 @@ package es.hulk.entorns.refactors.encapsulate_02;
 
 public class Customer {
 
-	String name;
-	int id;
+	private String name;
+	private int id;
 
 	public Customer(String name, int id) {
 		this.name = "Eugene Krabs";

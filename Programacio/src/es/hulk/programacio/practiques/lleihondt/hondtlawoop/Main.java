@@ -7,10 +7,10 @@ public class Main {
     public static void main(String[] args) {
 
         Candidate c1 = new Candidate(120000, "Party A");
-        Candidate c2 = new Candidate(100000, "Party A");
-        Candidate c3 = new Candidate(40000, "Party A");
-        Candidate c4 = new Candidate(5000, "Party A");
-        Candidate c5 = new Candidate(2500, "Party A");
+        Candidate c2 = new Candidate(100000, "Party B");
+        Candidate c3 = new Candidate(40000, "Party C");
+        Candidate c4 = new Candidate(5000, "Party D");
+        Candidate c5 = new Candidate(2500, "Party E");
 
         List<Candidate> candidates = new ArrayList<>();
 

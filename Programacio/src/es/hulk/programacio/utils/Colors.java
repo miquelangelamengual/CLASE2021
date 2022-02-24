@@ -28,130 +28,42 @@ public class Colors {
 
     public static void printColor(String mode, String color, String text) {
         if (mode.equals("newline")) {
-            switch (color) {
-                case "reset":
-                    System.out.println(reset + text);
-                    break;
-                case "black":
-                    System.out.println(black + text);
-                    break;
-                case "red":
-                    System.out.println(red + text);
-                    break;
-                case "green":
-                    System.out.println(green + text);
-                    break;
-                case "yellow":
-                    System.out.println(yellow + text);
-                    break;
-                case "blue":
-                    System.out.println(blue + text);
-                    break;
-                case "purple":
-                    System.out.println(purple + text);
-                    break;
-                case "cyan":
-                    System.out.println(cyan + text);
-                    break;
-                case "white":
-                    System.out.println(white + text);
-                    break;
-            }
+            newLineColor(color, text);
         } else if (mode.equals("line")) {
-            switch (color) {
-                case "reset":
-                    System.out.print(reset + text);
-                    break;
-                case "black":
-                    System.out.print(black + text);
-                    break;
-                case "red":
-                    System.out.print(red + text);
-                    break;
-                case "green":
-                    System.out.print(green + text);
-                    break;
-                case "yellow":
-                    System.out.print(yellow + text);
-                    break;
-                case "blue":
-                    System.out.print(blue + text);
-                    break;
-                case "purple":
-                    System.out.print(purple + text);
-                    break;
-                case "cyan":
-                    System.out.print(cyan + text);
-                    break;
-                case "white":
-                    System.out.print(white + text);
-                    break;
-            }
+            printLine(color, text);
         }
     }
 
 
     public static void printLine(String color, String text) {
         switch (color) {
-            case "reset":
-                System.out.print(reset + text);
-                break;
-            case "black":
-                System.out.print(black + text);
-                break;
-            case "red":
-                System.out.print(red + text);
-                break;
-            case "green":
-                System.out.print(green + text);
-                break;
-            case "yellow":
-                System.out.print(yellow + text);
-                break;
-            case "blue":
-                System.out.print(blue + text);
-                break;
-            case "purple":
-                System.out.print(purple + text);
-                break;
-            case "cyan":
-                System.out.print(cyan + text);
-                break;
-            case "white":
-                System.out.print(white + text);
-                break;
+            case "reset" -> System.out.print(reset + text);
+            case "black" -> System.out.print(black + text);
+            case "red" -> System.out.print(red + text);
+            case "green" -> System.out.print(green + text);
+            case "yellow" -> System.out.print(yellow + text);
+            case "blue" -> System.out.print(blue + text);
+            case "purple" -> System.out.print(purple + text);
+            case "cyan" -> System.out.print(cyan + text);
+            case "white" -> System.out.print(white + text);
         }
     }
 
     public static void printNewLine(String color, String text) {
+        newLineColor(color, text);
+    }
+
+    private static void newLineColor(String color, String text) {
         switch (color) {
-            case "reset":
-                System.out.println(reset + text);
-                break;
-            case "black":
-                System.out.println(black + text);
-                break;
-            case "red":
-                System.out.println(red + text);
-                break;
-            case "green":
-                System.out.println(green + text);
-                break;
-            case "yellow":
-                System.out.println(yellow + text);
-                break;
-            case "blue":
-                System.out.println(blue + text);
-                break;
-            case "purple":
-                System.out.println(purple + text);
-                break;
-            case "cyan":
-                System.out.println(cyan + text);
-                break;
-            case "white":
-                System.out.println(white + text);
-                break;
+            case "reset" -> System.out.println(reset + text);
+            case "black" -> System.out.println(black + text);
+            case "red" -> System.out.println(red + text);
+            case "green" -> System.out.println(green + text);
+            case "yellow" -> System.out.println(yellow + text);
+            case "blue" -> System.out.println(blue + text);
+            case "purple" -> System.out.println(purple + text);
+            case "cyan" -> System.out.println(cyan + text);
+            case "white" -> System.out.println(white + text);
         }
     }
 
