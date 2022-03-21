@@ -61,5 +61,4 @@ public class Elections {
     public int getSeats() {
         return numSeats;
     }
-
 }

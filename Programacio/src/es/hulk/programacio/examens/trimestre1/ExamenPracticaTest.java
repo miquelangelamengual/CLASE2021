@@ -1,4 +1,4 @@
-package es.hulk.programacio.examens;
+package es.hulk.programacio.examens.trimestre1;
 
 import java.util.Arrays;
 
