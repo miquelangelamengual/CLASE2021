@@ -16,7 +16,7 @@ public class Menu {
 
     public void init() {
         Scanner scanner = new Scanner(System.in);
-        Utilities.logNewLine("Trii una de les seguents opcions");
+        Utilities.logNewLine(Colors.reset + "Trii una de les seguents opcions");
         Utilities.logNewLine("");
         Utilities.logNewLine("1 - Principiant (Tauler 8x8 amb 10 mines");
         Utilities.logNewLine("2 - Normal (Tauler 16x16 amb 40 mines)");
@@ -44,13 +44,9 @@ public class Menu {
                 Utilities.log("Y: ");
                 int y = scanner.nextInt();
 
-                if (x >= 200 && y >= 200) {
-                    Utilities.logNewLine(Colors.red + "El tablero no puede ser tan grande");
+                if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
+                    Utilities.logNewLine(Colors.red + "El tablero no puede ser menor de 4x4 o mayor de 200x200");
                     init();
-                } else if (x <= 4 || y <= 4) {
-                    Utilities.logNewLine(Colors.red + "El tablero no puede ser tan pequeño");
-                    init();
-                    return;
                 }
 
                 generateBoard(x, y, 0, 0);
