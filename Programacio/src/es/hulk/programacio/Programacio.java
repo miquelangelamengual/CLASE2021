@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class Programacio {
 
     public static void main(String[] args) {
-        LoopsRevision.secondsToHours();
+        LoopsRevision.siEsMultipleDe3();
     }
 
     public static People people() {
@@ -53,5 +53,9 @@ public class Programacio {
 
         segonca.newVaccine(786);
         segonca.display();
+    }
+    //Method to check if int is odd or even
+    public static boolean isOdd(int number) {
+        return number % 2 != 0;
     }
 }

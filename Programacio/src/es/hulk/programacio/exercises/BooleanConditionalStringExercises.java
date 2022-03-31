@@ -11,7 +11,7 @@ public class BooleanConditionalStringExercises {
         boolean result;
         int x = 5;
         int y = 7;
-        result = x == y;
+        result = false;
         System.out.println("x == y: " + result);
     }
 
@@ -99,7 +99,4 @@ public class BooleanConditionalStringExercises {
         x = 15; y = 15;
         if (x > 5 & y > 7) System.out.println("x > 1 && y > 7");
     }
-
-
-
 }
