@@ -2,12 +2,12 @@ package es.hulk.buscaminas.utils;
 
 public class Utilities {
 
-    public static void logNewLine(String s) {
-        System.out.println(s);
+    public static void logNewLine(String str) {
+        System.out.println(str);
     }
 
-    public static void log(String s) {
-        System.out.print(s);
+    public static void log(String str) {
+        System.out.print(str);
     }
 
     public static void clear() {
