@@ -1,7 +1,7 @@
 package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.objects.Board;
-import es.hulk.buscaminas.utils.Colors;
+import es.hulk.buscaminas.utils.CC;
 import es.hulk.buscaminas.utils.Utilities;
 
 import java.util.Scanner;
@@ -16,7 +16,7 @@ public class Menu {
 
     public void init() {
         Scanner scanner = new Scanner(System.in);
-        Utilities.logNewLine(Colors.reset + "Trii una de les seguents opcions");
+        Utilities.logNewLine(CC.RESET + "Trii una de les seguents opcions");
         Utilities.logNewLine("");
         Utilities.logNewLine("1 - Principiant (Tauler 8x8 amb 10 mines");
         Utilities.logNewLine("2 - Normal (Tauler 16x16 amb 40 mines)");
@@ -45,21 +45,21 @@ public class Menu {
                 int y = scanner.nextInt();
 
                 if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
-                    Utilities.logNewLine(Colors.red + "El tablero no puede ser menor de 4x4 o mayor de 200x200");
+                    Utilities.logNewLine(CC.RED + "El tablero no puede ser menor de 4x4 o mayor de 200x200");
                     init();
                 }
 
                 generateBoard(x, y, 0, 0);
             }
             case 5 -> {
-                Utilities.logNewLine(Colors.red + "Has sortit del Buscaminas");
+                Utilities.logNewLine(CC.RED + "Has sortit del Buscaminas");
                 System.exit(0);
             }
         }
     }
 
-    public void generateBoard(int x, int y, int mines, int flags) {
-        board = new Board(x, y);
+    public void generateBoard(int x, int y, int mines, int numFlags) {
+        board = new Board(x, y, mines, numFlags);
         board.printBoard();
         init();
     }
