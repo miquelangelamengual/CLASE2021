@@ -1,21 +1,18 @@
 package es.hulk.buscaminas.menus;
 
+import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Board;
 import es.hulk.buscaminas.utils.CC;
 import es.hulk.buscaminas.utils.Utilities;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
 
-import java.util.Scanner;
+@Getter @NoArgsConstructor
+public class MainMenu {
 
-public class Menu {
-
-    private Board board;
-
-    public Menu() {
-        this.init();
-    }
+    private Board board = Buscaminas.getBoard();
 
     public void init() {
-        Scanner scanner = new Scanner(System.in);
         Utilities.logNewLine(CC.RESET + "Trii una de les seguents opcions");
         Utilities.logNewLine("");
         Utilities.logNewLine("1 - Principiant (Tauler 8x8 amb 10 mines");
@@ -26,7 +23,7 @@ public class Menu {
         Utilities.logNewLine("5 - Surtir del programa");
         Utilities.logNewLine("");
         Utilities.log("Trii una de les opcions: ");
-        int option = scanner.nextInt();
+        int option = Utilities.readInt();
         switch (option) {
             case 1 -> {
                 generateBoard(8, 8, 0, 0);
@@ -38,18 +35,7 @@ public class Menu {
                 generateBoard(16, 30, 0, 0);
             }
             case 4 -> {
-                Utilities.log("X: ");
-                int x = scanner.nextInt();
-
-                Utilities.log("Y: ");
-                int y = scanner.nextInt();
-
-                if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
-                    Utilities.logNewLine(CC.RED + "El tablero no puede ser menor de 4x4 o mayor de 200x200");
-                    init();
-                }
-
-                generateBoard(x, y, 0, 0);
+                this.customBoard();
             }
             case 5 -> {
                 Utilities.logNewLine(CC.RED + "Has sortit del Buscaminas");
@@ -61,6 +47,21 @@ public class Menu {
     public void generateBoard(int x, int y, int mines, int numFlags) {
         board = new Board(x, y, mines, numFlags);
         board.printBoard();
-        init();
+        new ElectionMenu().electionMenu();
+    }
+
+    public void customBoard() {
+        Utilities.log("X: ");
+        int x = Utilities.readInt();
+
+        Utilities.log("Y: ");
+        int y = Utilities.readInt();
+
+        if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
+            Utilities.logNewLine(CC.RED + "El tablero no puede ser menor de 4x4 o mayor de 200x200");
+            init();
+        }
+
+        generateBoard(x, y, 0, 0);
     }
 }
