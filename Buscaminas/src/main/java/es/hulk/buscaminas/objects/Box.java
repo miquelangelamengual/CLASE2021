@@ -1,5 +1,6 @@
 package es.hulk.buscaminas.objects;
 
+import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,6 +25,42 @@ public class Box {
         this.minesAround = 0;
         this.mines = mines;
         this.numFlags = numFlags;
+    }
+
+    public void putFlag() {
+        if (isFlag()) {
+            System.out.println("No puedes poner una bandera aqui");
+            return;
+        }
+
+        setFlag(true);
+        numFlags--;
+    }
+
+    public void removeFlag() {
+        if (!isFlag()) {
+            System.out.println("No puedes quitar una bandera aqui");
+            return;
+        }
+
+        setFlag(false);
+        numFlags++;
+    }
+
+    public void openBox() {
+        if (isOpen()) {
+            System.out.println("No puedes abrir una casilla ya abierta");
+            return;
+        }
+
+        setOpen(true);
+    }
+
+    public boolean isMine() {
+        if (isMine()) {
+            System.out.println(Text.LOSE);
+        }
+        return false;
     }
 
 }
