@@ -1,19 +1,34 @@
 package es.hulk.buscaminas.utils;
 
+import lombok.experimental.UtilityClass;
+
+import java.util.Scanner;
+
+@UtilityClass
 public class Utilities {
 
-    public static void logNewLine(String str) {
+    private Scanner scanner = new Scanner(System.in);
+
+    public void logNewLine(String str) {
         System.out.println(str);
     }
 
-    public static void log(String str) {
+    public void log(String str) {
         System.out.print(str);
     }
 
-    public static void clear() {
+    public void clear() {
         for (int i = 0; i <= 200; i++) {
             logNewLine("");
         }
+    }
+
+    public int readInt() {
+        return scanner.nextInt();
+    }
+
+    public String readString() {
+        return scanner.next();
     }
 
 }
