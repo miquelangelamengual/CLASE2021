@@ -19,7 +19,7 @@ public class ElectionMenu {
         Utilities.logNewLine("3. Eliminar bandera");
         Utilities.logNewLine("4. Salir");
         Utilities.logNewLine("");
-        Utilities.logNewLine("Opción: ");
+        Utilities.log("Opción: ");
         int option = Utilities.readInt();
 
         Utilities.log("Elige una columna: ");
