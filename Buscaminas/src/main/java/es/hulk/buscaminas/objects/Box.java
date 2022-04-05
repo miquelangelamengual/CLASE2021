@@ -1,6 +1,5 @@
 package es.hulk.buscaminas.objects;
 
-import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.Setter;
 
