@@ -29,18 +29,18 @@ public class ElectionMenu {
         int y = Utilities.readInt();
 
         switch (option) {
-            case 1 -> {
+            case 1:
                 box[x][y].openBox();
                 this.printBoardAndElectionMenu();
-            }
-            case 2 -> {
+                break;
+            case 2:
                 box[x][y].putFlag();
                 this.printBoardAndElectionMenu();
-            }
-            case 3 -> {
+                break;
+            case 3:
                 box[x][y].removeFlag();
                 this.printBoardAndElectionMenu();
-            }
+                break;
         }
     }
 

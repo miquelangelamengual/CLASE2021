@@ -7,7 +7,8 @@ import es.hulk.buscaminas.utils.Utilities;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Getter @NoArgsConstructor
+@Getter
+@NoArgsConstructor
 public class MainMenu {
 
     private Board board = Buscaminas.getBoard();
@@ -25,22 +26,22 @@ public class MainMenu {
         Utilities.log("Trii una de les opcions: ");
         int option = Utilities.readInt();
         switch (option) {
-            case 1 -> {
+            case 1:
                 generateBoard(8, 8, 0, 0);
-            }
-            case 2 -> {
+                break;
+            case 2:
                 generateBoard(16, 16, 0, 0);
-            }
-            case 3 -> {
+                break;
+            case 3:
                 generateBoard(16, 30, 0, 0);
-            }
-            case 4 -> {
+                break;
+            case 4:
                 this.customBoard();
-            }
-            case 5 -> {
+                break;
+            case 5:
                 Utilities.logNewLine(CC.RED + "Has sortit del Buscaminas");
                 System.exit(0);
-            }
+                break;
         }
     }
 
