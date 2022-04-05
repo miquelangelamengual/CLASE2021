@@ -7,7 +7,7 @@ import java.util.Scanner;
 @UtilityClass
 public class Utilities {
 
-    private Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in);
 
     public void logNewLine(String str) {
         System.out.println(str);
