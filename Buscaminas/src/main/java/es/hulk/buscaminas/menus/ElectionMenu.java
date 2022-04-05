@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 public class ElectionMenu {
 
     private MainMenu menu = Buscaminas.getMenu();
-    private Box[][] box = menu.getBoard().getBoard();
+    private Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
 
     public void electionMenu() {
         Utilities.logNewLine("Elige una opción:");
