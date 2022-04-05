@@ -2,6 +2,7 @@ package es.hulk.buscaminas.objects;
 
 import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 public class Board {
 
@@ -22,10 +23,6 @@ public class Board {
                 board[i][j] = new Box(i, j, mines, numFlags);
             }
         }
-    }
-
-    public Board() {
-
     }
 
     public void printBoard() {

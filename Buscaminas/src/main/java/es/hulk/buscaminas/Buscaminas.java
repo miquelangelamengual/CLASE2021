@@ -12,7 +12,7 @@ public class Buscaminas {
 
     public static void main(String[] args) {
         menu = new MainMenu();
-        board = new Board();
+        board = menu.getBoard();
 
         menu.init();
     }
