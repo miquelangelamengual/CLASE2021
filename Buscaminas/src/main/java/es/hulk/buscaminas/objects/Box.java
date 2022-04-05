@@ -50,17 +50,12 @@ public class Box {
     public void openBox() {
         if (isOpen()) {
             System.out.println("No puedes abrir una casilla ya abierta");
+        } else if (isMine()) {
+            System.out.println("Has perdido");
             return;
         }
 
         setOpen(true);
-    }
-
-    public boolean isMine() {
-        if (isMine()) {
-            System.out.println(Text.LOSE);
-        }
-        return false;
     }
 
 }
