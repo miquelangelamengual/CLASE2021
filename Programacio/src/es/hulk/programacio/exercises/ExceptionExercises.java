@@ -1,9 +1,11 @@
 package es.hulk.programacio.exercises;
 
-import es.hulk.programacio.utils.Colors;
-
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,58 +19,93 @@ public class ExceptionExercises {
 
     private static final Scanner scanner = new Scanner(System.in);
 
-    public static void dividePer0(int a) {
+    public static void dividePerZero() {
+        int num = scanner.nextInt();
+
         try {
-            double result = a / 0;
-            System.out.println(result);
-        } catch (ArithmeticException exception) {
-            Colors.error(exception);
+            System.out.println(num / 0);
+        } catch (ArithmeticException e) {
+            System.out.println("No se puede dividir por cero");
+        } finally {
+            System.out.println("Fin del programa");
         }
     }
 
-    public static void checkEntry() {
+    public static void inputControl() {
+        int num = scanner.nextInt();
+
         try {
-            int num = scanner.nextInt();
             System.out.println(num);
-        } catch (InputMismatchException exception) {
-            Colors.error(exception);
+        } catch (InputMismatchException e) {
+            System.out.println("Error de entrada");
+        } finally {
+            System.out.println("Fin del programa");
         }
     }
 
-    public static void ex3() {
+    public static void convertStringToInteger() {
+        String num = scanner.next();
+
         try {
-            String num = scanner.nextLine();
-            int numInt = Integer.parseInt(num);
-            System.out.println(numInt);
-        } catch (NumberFormatException exception) {
-            Colors.error(exception);
-        }
-    }
-
-    public static void ex4() {
-        try {
-            String s1 = scanner.nextLine();
-            String s2 = scanner.nextLine();
-
-            int num1 = Integer.parseInt(s1);
-            int num2 = Integer.parseInt(s2);
-
-            int result = num1 / num2;
+            System.out.println(Integer.parseInt(num));
         } catch (NumberFormatException e) {
-            Colors.error(e);
+            System.out.println("Error de formato");
+        } finally {
+            System.out.println("Fin del programa");
         }
     }
 
-    public static void ex5() {
+    public static void convertToMoro() {
+        String num = scanner.next();
+        String num2 = scanner.next();
+
         try {
-            ArrayList<Integer> arr = new ArrayList<>();
-            arr.get(10);
-        } catch (IndexOutOfBoundsException e) {
-            Colors.error(e);
+            int div = Integer.parseInt(num) / Integer.parseInt(num2);
+            System.out.println(div);
+        } catch (NumberFormatException e) {
+            System.out.println("Error de formato");
+        } finally {
+            System.out.println("Fin del programa");
         }
     }
 
+    public static void outOfBounds() {
+        String[] args = new String[5];
+        List<String> list = new ArrayList<>();
 
+        try {
+            System.out.println(list.get(5));
+            System.out.println(args[5]);
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("Error de formato");
+        } finally {
+            System.out.println("Fin del programa");
+        }
+    }
 
+    public static void main(String[] args) throws Exception {
+
+        File myFile = new File("file.txt");
+        readFile(myFile);
+
+    }
+
+    public static void readFile(File file) throws IOException {
+        RandomAccessFile input = null;
+        String line = null;
+
+        try {
+            input = new RandomAccessFile(file, "r");
+            while ((line = input.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Error al leer el archivo");
+        } finally {
+            if (input != null) {
+                input.close();
+            }
+        }
+    }
 
 }
