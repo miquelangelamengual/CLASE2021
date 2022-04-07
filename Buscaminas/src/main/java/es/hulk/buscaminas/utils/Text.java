@@ -2,33 +2,53 @@ package es.hulk.buscaminas.utils;
 
 import lombok.experimental.UtilityClass;
 
+import java.util.Scanner;
+
 @UtilityClass
 public class Text {
 
+    private final Scanner scanner = new Scanner(System.in);
+
+    public void logNewLine(String str) {
+        System.out.println(str);
+    }
+
+    public void log(String str) {
+        System.out.print(str);
+    }
+
+    public int readInt() {
+        return scanner.nextInt();
+    }
+
+    public String readString() {
+        return scanner.next();
+    }
+
     public void printMainMenu() {
-        Utilities.logNewLine(CC.RESET + "Trii una de les seguents opcions");
-        Utilities.logNewLine("");
-        Utilities.logNewLine("1 - Principiant (Tauler 8x8 amb 10 mines");
-        Utilities.logNewLine("2 - Normal (Tauler 16x16 amb 40 mines)");
-        Utilities.logNewLine("3 - Dificil (Tauler 16x30 amb 99 mines");
-        Utilities.logNewLine("4 - Personalitzat (Tauler maxim 200x200 amb x mines maxim");
-        Utilities.logNewLine("");
-        Utilities.logNewLine("5 - Surtir del programa");
-        Utilities.logNewLine("");
-        Utilities.log("Trii una de les opcions: ");
+        logNewLine(CC.RESET + "Trii una de les seguents opcions");
+        logNewLine("");
+        logNewLine("1 - Principiant (Tauler 8x8 amb 10 mines");
+        logNewLine("2 - Normal (Tauler 16x16 amb 40 mines)");
+        logNewLine("3 - Dificil (Tauler 16x30 amb 99 mines");
+        logNewLine("4 - Personalitzat (Tauler maxim 200x200 amb x mines maxim");
+        logNewLine("");
+        logNewLine("5 - Surtir del programa");
+        logNewLine("");
+        log("Trii una de les opcions: ");
     }
 
     public void printElectionMenu() {
-        Utilities.logNewLine("Elige una opción:");
-        Utilities.logNewLine("");
-        Utilities.logNewLine("1. Destapar casilla");
-        Utilities.logNewLine("2. Poner bandera");
-        Utilities.logNewLine("3. Eliminar bandera");
-        Utilities.logNewLine("");
-        Utilities.logNewLine("4. Reiniciar Partida");
-        Utilities.logNewLine("5. Surtir del programa");
-        Utilities.logNewLine("");
-        Utilities.log("Opción: ");
+        logNewLine("Elige una opción:");
+        logNewLine("");
+        logNewLine("1. Destapar casilla");
+        logNewLine("2. Poner bandera");
+        logNewLine("3. Eliminar bandera");
+        logNewLine("");
+        logNewLine("4. Reiniciar Partida");
+        logNewLine("5. Surtir del programa");
+        logNewLine("");
+        log("Opción: ");
     }
 
     public String LEFT_GAME = CC.RED + "Has sortit del Buscaminas";
@@ -52,5 +72,4 @@ public class Text {
     public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
 
     public String RESET_GAME = "Quieres reiniciar la partida? (yes/no)";
-
 }

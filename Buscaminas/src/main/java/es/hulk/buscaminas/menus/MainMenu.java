@@ -2,9 +2,7 @@ package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Board;
-import es.hulk.buscaminas.utils.CC;
 import es.hulk.buscaminas.utils.Text;
-import es.hulk.buscaminas.utils.Utilities;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -16,7 +14,7 @@ public class MainMenu {
 
     public void init() {
         Text.printMainMenu();
-        int option = Utilities.readInt();
+        int option = Text.readInt();
         switch (option) {
             case 1:
                 generateBoard(8, 8, 8, 8);
@@ -31,24 +29,24 @@ public class MainMenu {
                 this.customBoard();
                 break;
             case 5:
-                Utilities.logNewLine(Text.LEFT_GAME);
+                Text.logNewLine(Text.LEFT_GAME);
                 System.exit(0);
                 break;
         }
     }
 
-    public void customBoard() {
-        Utilities.log(Text.CUSTOM_BOARD_ROWS);
-        int x = Utilities.readInt();
+    private void customBoard() {
+        Text.log(Text.CUSTOM_BOARD_ROWS);
+        int x = Text.readInt();
 
-        Utilities.log(Text.CUSTOM_BOARD_COLS);
-        int y = Utilities.readInt();
+        Text.log(Text.CUSTOM_BOARD_COLS);
+        int y = Text.readInt();
 
-        Utilities.log(Text.CUSTOM_BOARD_MINES);
-        int mines = Utilities.readInt();
+        Text.log(Text.CUSTOM_BOARD_MINES);
+        int mines = Text.readInt();
 
         if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
-            Utilities.logNewLine(Text.CUSTOM_BOARD_ERROR);
+            Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
             init();
         }
 
@@ -57,7 +55,7 @@ public class MainMenu {
 
     private void generateBoard(int x, int y, int mines, int numFlags) {
         board = new Board(x, y, mines, numFlags);
-        board.printBoard();
+        board.toString();
         new ElectionMenu().electionMenu();
     }
 }

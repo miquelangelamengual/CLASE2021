@@ -18,8 +18,8 @@ public class ResetGame {
     }
 
     public void askResetGame() {
-        Utilities.log(Text.RESET_GAME);
-        String reset = Utilities.readString();
+        Text.log(Text.RESET_GAME);
+        String reset = Text.readString();
 
         if (reset.equals("yes")) {
             ResetGame.resetGame();

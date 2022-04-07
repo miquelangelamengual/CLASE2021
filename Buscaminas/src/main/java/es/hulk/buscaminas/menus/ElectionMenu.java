@@ -4,7 +4,6 @@ import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Box;
 import es.hulk.buscaminas.utils.ResetGame;
 import es.hulk.buscaminas.utils.Text;
-import es.hulk.buscaminas.utils.Utilities;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
@@ -18,7 +17,7 @@ public class ElectionMenu {
 
     public void electionMenu() {
         Text.printElectionMenu();
-        int option = Utilities.readInt();
+        int option = Text.readInt();
 
         switch (option) {
             case 1:
@@ -45,16 +44,16 @@ public class ElectionMenu {
         }
     }
 
-    public void printBoardAndElectionMenu() {
-        menu.getBoard().printBoard();
+    private void printBoardAndElectionMenu() {
+        menu.getBoard().toString();
         this.electionMenu();
     }
 
     private void askNumbers(int x, int y) {
-        Utilities.log(Text.CUSTOM_BOARD_ROWS);
-        x = Utilities.readInt();
+        Text.log(Text.CUSTOM_BOARD_ROWS);
+        x = Text.readInt();
 
-        Utilities.log(Text.CUSTOM_BOARD_COLS);
-        y = Utilities.readInt();
+        Text.log(Text.CUSTOM_BOARD_COLS);
+        y = Text.readInt();
     }
 }
