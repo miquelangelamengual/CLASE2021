@@ -37,7 +37,7 @@ public class Text {
 
     public String REMOVE_FLAG = "Has quitado una bandera";
     public String PUT_FLAG = "Has puesto una bandera";
-    public String FLAGS_REMAINING = "Banderas restantes " + Buscaminas.getBoard().getBoard()[0][0].getNumFlags();
+    public String FLAGS_REMAINING = "Banderas restantes";
     public String OUT_OF_FLAGS = "No te quedan mas banderas";
     public String PUT_FLAG_ERROR = "No puedes poner una bandera en esta casilla porque ya hay una bandera";
     public String REMOVE_FLAG_ERROR = "No puedes quitar una bandera en esta casilla porque no hay una bandera";
