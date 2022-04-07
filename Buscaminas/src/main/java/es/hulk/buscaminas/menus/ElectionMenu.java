@@ -16,10 +16,10 @@ public class ElectionMenu {
         Text.printElectionMenu();
         int option = Utilities.readInt();
 
-        Utilities.log("Elige una columna: ");
+        Utilities.log(Text.CUSTOM_BOARD_ROWS);
         int x = Utilities.readInt();
 
-        Utilities.log("Elige una fila: ");
+        Utilities.log(Text.CUSTOM_BOARD_COLS);
         int y = Utilities.readInt();
 
         switch (option) {
