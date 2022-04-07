@@ -5,12 +5,13 @@ import lombok.Getter;
 
 public class Board {
 
-    private int rows; // X
-    private int columns; // Y
+    private final int rows; // X
+    private final int columns; // Y
     private int mines;
     private int numFlags;
 
-    @Getter private Box[][] board;
+    @Getter
+    private final Box[][] board;
 
     public Board(int rows, int columns, int mines, int numFlags) {
         this.rows = rows;
@@ -25,6 +26,7 @@ public class Board {
             }
         }
         this.putRandomMines();
+        this.putNumbers();
     }
 
     public void printBoard() {
@@ -49,6 +51,41 @@ public class Board {
             if (!board[randomX][randomY].isMine()) {
                 board[randomX][randomY].setMine(true);
                 mines--;
+            }
+        }
+    }
+
+    public void putNumbers() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (!board[i][j].isMine()) {
+                    int minesAround = 0;
+                    if (i > 0 && j > 0 && board[i - 1][j - 1].isMine()) {
+                        minesAround++;
+                    }
+                    if (i > 0 && board[i - 1][j].isMine()) {
+                        minesAround++;
+                    }
+                    if (i > 0 && j < columns - 1 && board[i - 1][j + 1].isMine()) {
+                        minesAround++;
+                    }
+                    if (j > 0 && board[i][j - 1].isMine()) {
+                        minesAround++;
+                    }
+                    if (j < columns - 1 && board[i][j + 1].isMine()) {
+                        minesAround++;
+                    }
+                    if (i < rows - 1 && j > 0 && board[i + 1][j - 1].isMine()) {
+                        minesAround++;
+                    }
+                    if (i < rows - 1 && board[i + 1][j].isMine()) {
+                        minesAround++;
+                    }
+                    if (i < rows - 1 && j < columns - 1 && board[i + 1][j + 1].isMine()) {
+                        minesAround++;
+                    }
+                    board[i][j].setMinesAround(minesAround);
+                }
             }
         }
     }
