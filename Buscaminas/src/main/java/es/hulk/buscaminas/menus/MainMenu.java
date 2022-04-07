@@ -55,7 +55,7 @@ public class MainMenu {
 
     private void generateBoard(int x, int y, int mines, int numFlags) {
         board = new Board(x, y, mines, numFlags);
-        board.toString();
+        board.printBoard();
         new ElectionMenu().electionMenu();
     }
 }

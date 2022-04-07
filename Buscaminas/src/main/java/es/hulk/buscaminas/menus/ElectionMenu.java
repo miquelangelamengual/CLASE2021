@@ -45,7 +45,7 @@ public class ElectionMenu {
     }
 
     private void printBoardAndElectionMenu() {
-        menu.getBoard().toString();
+        menu.getBoard().printBoard();
         this.electionMenu();
     }
 
