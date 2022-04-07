@@ -33,13 +33,15 @@ public class Box {
             return;
         }
 
-        if (numFlags == 0) {
+        if (getNumFlags() == 0) {
             System.out.println(Text.OUT_OF_FLAGS);
             return;
         }
 
+        System.out.println();
         System.out.println(Text.PUT_FLAG);
-        System.out.println(Text.FLAGS_REMAINING);
+        System.out.println(Text.FLAGS_REMAINING + ": " + (getNumFlags() - 1));
+        System.out.println();
         setFlag(true);
         numFlags--;
     }
@@ -50,8 +52,10 @@ public class Box {
             return;
         }
 
+        System.out.println();
         System.out.println(Text.REMOVE_FLAG);
-        System.out.println(Text.FLAGS_REMAINING);
+        System.out.println(Text.FLAGS_REMAINING + ": " + (getNumFlags() + 1));
+        System.out.println();
         setFlag(false);
         numFlags++;
     }
