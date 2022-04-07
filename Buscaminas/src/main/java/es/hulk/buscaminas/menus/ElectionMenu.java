@@ -16,6 +16,11 @@ public class ElectionMenu {
         Text.printElectionMenu();
         int option = Utilities.readInt();
 
+        if (option == 4) {
+            System.exit(404);
+            return;
+        }
+
         Utilities.log(Text.CUSTOM_BOARD_ROWS);
         int x = Utilities.readInt();
 
