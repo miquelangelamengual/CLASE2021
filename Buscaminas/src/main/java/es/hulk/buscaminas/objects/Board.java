@@ -2,7 +2,6 @@ package es.hulk.buscaminas.objects;
 
 import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 public class Board {
 

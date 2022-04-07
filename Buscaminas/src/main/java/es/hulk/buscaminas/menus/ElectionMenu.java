@@ -2,6 +2,7 @@ package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Box;
+import es.hulk.buscaminas.utils.Text;
 import es.hulk.buscaminas.utils.Utilities;
 import lombok.NoArgsConstructor;
 
@@ -12,14 +13,7 @@ public class ElectionMenu {
     private Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
 
     public void electionMenu() {
-        Utilities.logNewLine("Elige una opción:");
-        Utilities.logNewLine("");
-        Utilities.logNewLine("1. Destapar casilla");
-        Utilities.logNewLine("2. Poner bandera");
-        Utilities.logNewLine("3. Eliminar bandera");
-        Utilities.logNewLine("4. Salir");
-        Utilities.logNewLine("");
-        Utilities.log("Opción: ");
+        Text.printElectionMenu();
         int option = Utilities.readInt();
 
         Utilities.log("Elige una columna: ");
