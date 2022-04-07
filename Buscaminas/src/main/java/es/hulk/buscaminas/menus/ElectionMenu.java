@@ -18,24 +18,25 @@ public class ElectionMenu {
         Text.printElectionMenu();
         int option = Text.readInt();
 
+        if (option == 3) {
+            System.exit(404);
+            return;
+        }
+
+        Text.log(Text.CUSTOM_BOARD_ROWS);
+        x = Text.readInt();
+
+        Text.log(Text.CUSTOM_BOARD_COLS);
+        y = Text.readInt();
+
         switch (option) {
             case 1:
-                this.askNumbers(x, y);
                 box[x][y].openBox();
                 this.printBoardAndElectionMenu();
                 break;
             case 2:
-                this.askNumbers(x, y);
-                box[x][y].putFlag();
+                box[x][y].changeFlag();
                 this.printBoardAndElectionMenu();
-                break;
-            case 3:
-                this.askNumbers(x, y);
-                box[x][y].removeFlag();
-                this.printBoardAndElectionMenu();
-                break;
-            case 4:
-                System.exit(404);
                 break;
         }
     }
@@ -43,13 +44,5 @@ public class ElectionMenu {
     private void printBoardAndElectionMenu() {
         menu.getBoard().printBoard();
         this.electionMenu();
-    }
-
-    private void askNumbers(int x, int y) {
-        Text.log(Text.CUSTOM_BOARD_ROWS);
-        x = Text.readInt();
-
-        Text.log(Text.CUSTOM_BOARD_COLS);
-        y = Text.readInt();
     }
 }

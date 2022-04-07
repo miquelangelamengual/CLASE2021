@@ -42,10 +42,9 @@ public class Text {
         logNewLine("Elige una opción:");
         logNewLine("");
         logNewLine("1. Destapar casilla");
-        logNewLine("2. Poner bandera");
-        logNewLine("3. Eliminar bandera");
+        logNewLine("2. Cambiar bandera");
         logNewLine("");
-        logNewLine("4. Surtir del programa");
+        logNewLine("3. Surtir del programa");
         logNewLine("");
         log("Opción: ");
     }
@@ -71,4 +70,8 @@ public class Text {
     public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
 
     public String RESET_GAME = "Quieres reiniciar la partida? (yes/no)";
+
+    public void gameLost() {
+        logNewLine("Has perdido!");
+    }
 }
