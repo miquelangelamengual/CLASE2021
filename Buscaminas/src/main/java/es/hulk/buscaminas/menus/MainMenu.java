@@ -58,8 +58,6 @@ public class MainMenu {
     private void generateBoard(int x, int y, int mines, int numFlags) {
         board = new Board(x, y, mines, numFlags);
         board.printBoard();
-        System.out.println(mines + " minas");
-        System.out.println(numFlags + " banderas");
         new ElectionMenu().electionMenu();
     }
 }
