@@ -24,6 +24,7 @@ public class Board {
                 board[i][j] = new Box(i, j, mines, numFlags);
             }
         }
+        this.putRandomMines();
     }
 
     public void printBoard() {
@@ -38,6 +39,17 @@ public class Board {
                 }
             }
             System.out.println();
+        }
+    }
+
+    public void putRandomMines() {
+        while (mines > 0) {
+            int randomX = (int) (Math.random() * rows);
+            int randomY = (int) (Math.random() * columns);
+            if (!board[randomX][randomY].isMine()) {
+                board[randomX][randomY].setMine(true);
+                mines--;
+            }
         }
     }
 }
