@@ -1,6 +1,5 @@
 package es.hulk.buscaminas.utils;
 
-import es.hulk.buscaminas.Buscaminas;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -25,7 +24,9 @@ public class Text {
         Utilities.logNewLine("1. Destapar casilla");
         Utilities.logNewLine("2. Poner bandera");
         Utilities.logNewLine("3. Eliminar bandera");
-        Utilities.logNewLine("4. Salir");
+        Utilities.logNewLine("");
+        Utilities.logNewLine("4. Reiniciar Partida");
+        Utilities.logNewLine("5. Surtir del programa");
         Utilities.logNewLine("");
         Utilities.log("Opción: ");
     }
@@ -50,5 +51,6 @@ public class Text {
     public String CUSTOM_BOARD_COLS = "Introduce el numero de columnas: ";
     public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
 
+    public String RESET_GAME = "Quieres reiniciar la partida? (yes/no)";
 
 }
