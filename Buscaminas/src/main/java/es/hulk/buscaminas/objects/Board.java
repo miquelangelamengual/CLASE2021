@@ -21,7 +21,7 @@ public class Board {
 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                board[i][j] = new Box(i, j, mines, numFlags);
+                board[i][j] = new Box(i, j);
             }
         }
         this.putRandomMines();

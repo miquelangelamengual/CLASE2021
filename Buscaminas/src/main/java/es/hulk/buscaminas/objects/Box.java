@@ -8,23 +8,19 @@ import lombok.Setter;
 public class Box {
 
     private boolean flag;
-    private int numFlags;
     private boolean mine;
     private boolean open;
     private int minesAround;
-    private int mines;
     private int x;
     private int y;
 
-    public Box(int x, int y, int mines, int numFlags) {
+    public Box(int x, int y) {
         this.x = x;
         this.y = y;
         this.mine = false;
         this.open = false;
         this.flag = false;
         this.minesAround = 0;
-        this.mines = mines;
-        this.numFlags = numFlags;
     }
 
     public void putFlag() {
@@ -33,17 +29,11 @@ public class Box {
             return;
         }
 
-        if (getNumFlags() == 0) {
-            System.out.println(Text.OUT_OF_FLAGS);
-            return;
-        }
-
         System.out.println();
         System.out.println(Text.PUT_FLAG);
-        System.out.println(Text.FLAGS_REMAINING + ": " + (getNumFlags() - 1));
+        System.out.println(Text.FLAGS_REMAINING);
         System.out.println();
         setFlag(true);
-        numFlags--;
     }
 
     public void removeFlag() {
@@ -54,10 +44,9 @@ public class Box {
 
         System.out.println();
         System.out.println(Text.REMOVE_FLAG);
-        System.out.println(Text.FLAGS_REMAINING + ": " + (getNumFlags() + 1));
+        System.out.println(Text.FLAGS_REMAINING);
         System.out.println();
         setFlag(false);
-        numFlags++;
     }
 
     public void openBox() {
