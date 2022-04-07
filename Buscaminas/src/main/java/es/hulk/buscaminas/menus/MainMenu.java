@@ -19,13 +19,13 @@ public class MainMenu {
         int option = Utilities.readInt();
         switch (option) {
             case 1:
-                generateBoard(8, 8, 8);
+                generateBoard(8, 8, 8, 8);
                 break;
             case 2:
-                generateBoard(16, 16, 40);
+                generateBoard(16, 16, 40, 40);
                 break;
             case 3:
-                generateBoard(16, 30, 99);
+                generateBoard(16, 30, 99, 99);
                 break;
             case 4:
                 this.customBoard();
@@ -52,12 +52,14 @@ public class MainMenu {
             init();
         }
 
-        generateBoard(x, y, mines);
+        generateBoard(x, y, mines, mines);
     }
 
-    private void generateBoard(int x, int y, int mines) {
-        board = new Board(x, y, mines, mines);
+    private void generateBoard(int x, int y, int mines, int numFlags) {
+        board = new Board(x, y, mines, numFlags);
         board.printBoard();
+        System.out.println(mines + " minas");
+        System.out.println(numFlags + " banderas");
         new ElectionMenu().electionMenu();
     }
 }
