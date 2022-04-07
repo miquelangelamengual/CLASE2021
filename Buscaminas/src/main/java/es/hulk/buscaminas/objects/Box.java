@@ -72,13 +72,4 @@ public class Box {
         setOpen(true);
     }
 
-    public void putMine() {
-        if (isMine()) {
-            System.out.println("No puedes poner una mina aqui");
-            return;
-        }
-
-        setMine(true);
-        mines--;
-    }
 }
