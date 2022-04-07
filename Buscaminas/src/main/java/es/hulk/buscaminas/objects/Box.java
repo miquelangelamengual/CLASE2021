@@ -23,41 +23,14 @@ public class Box {
         this.minesAround = 0;
     }
 
-    public void putFlag() {
-        if (isFlag()) {
-            System.out.println(Text.PUT_FLAG_ERROR);
-            return;
-        }
-
-        System.out.println();
-        System.out.println(Text.PUT_FLAG);
-        System.out.println(Text.FLAGS_REMAINING);
-        System.out.println();
-        setFlag(true);
-    }
-
-    public void removeFlag() {
-        if (!isFlag()) {
-            System.out.println(Text.REMOVE_FLAG_ERROR);
-            return;
-        }
-
-        System.out.println();
-        System.out.println(Text.REMOVE_FLAG);
-        System.out.println(Text.FLAGS_REMAINING);
-        System.out.println();
-        setFlag(false);
+    public void changeFlag() {
+        setFlag(!isFlag());
     }
 
     public void openBox() {
-        if (isOpen()) {
-            System.out.println(Text.BOX_ALREDY_OPEN);
-        } else if (isMine()) {
-            System.out.println(Text.LOSE);
-            return;
-        }
+        if (isOpen()) return;
+        if (isMine()) Text.gameLost();
 
-        System.out.println(Text.OPEN_BOX);
         setOpen(true);
     }
 
