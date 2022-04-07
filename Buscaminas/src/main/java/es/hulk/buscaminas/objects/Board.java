@@ -15,6 +15,8 @@ public class Board {
     public Board(int rows, int columns, int mines, int numFlags) {
         this.rows = rows;
         this.columns = columns;
+        this.mines = mines;
+        this.numFlags = numFlags;
         board = new Box[rows][columns];
 
         for (int i = 0; i < rows; i++) {
