@@ -45,8 +45,7 @@ public class Text {
         logNewLine("2. Poner bandera");
         logNewLine("3. Eliminar bandera");
         logNewLine("");
-        logNewLine("4. Reiniciar Partida");
-        logNewLine("5. Surtir del programa");
+        logNewLine("4. Surtir del programa");
         logNewLine("");
         log("Opción: ");
     }

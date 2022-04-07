@@ -2,7 +2,6 @@ package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Box;
-import es.hulk.buscaminas.utils.ResetGame;
 import es.hulk.buscaminas.utils.Text;
 import lombok.NoArgsConstructor;
 
@@ -36,9 +35,6 @@ public class ElectionMenu {
                 this.printBoardAndElectionMenu();
                 break;
             case 4:
-                ResetGame.askResetGame();
-                break;
-            case 5:
                 System.exit(404);
                 break;
         }
