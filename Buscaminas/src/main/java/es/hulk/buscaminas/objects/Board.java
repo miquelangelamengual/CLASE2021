@@ -1,5 +1,7 @@
 package es.hulk.buscaminas.objects;
 
+import es.hulk.buscaminas.Buscaminas;
+import es.hulk.buscaminas.menus.ElectionMenu;
 import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
 
@@ -8,16 +10,15 @@ public class Board {
     private final int rows; // X
     private final int columns; // Y
     private int mines;
-    private int numFlags;
+    int minesAround = 0;
 
     @Getter
     private final Box[][] board;
 
-    public Board(int rows, int columns, int mines, int numFlags) {
+    public Board(int rows, int columns, int mines) {
         this.rows = rows;
         this.columns = columns;
         this.mines = mines;
-        this.numFlags = numFlags;
         board = new Box[rows][columns];
 
         for (int i = 0; i < rows; i++) {
@@ -25,19 +26,27 @@ public class Board {
                 board[i][j] = new Box(i, j);
             }
         }
-        this.putRandomMines();
         this.putNumbers();
     }
 
+    boolean iteration = false;
     public void printBoard() {
+
+        if (!iteration) {
+            this.putRandomMines();
+
+            iteration = true;
+        }
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (board[i][j].isFlag()) {
                     System.out.print(CC.CYAN + " [ F ] " + CC.RESET);
                 } else if (board[i][j].isOpen()) {
-                    System.out.print(CC.CYAN + " [ O ] " + CC.RESET);
+                    System.out.print(CC.GREEN + " [ O ] " + CC.RESET);
+                } else if (iteration || board[i][j].getMinesAround() != 0) {
+                    System.out.print(CC.YELLOW + " [ " + board[i][j].getMinesAround() + " ] " + CC.RESET);
                 } else {
-                    System.out.print(CC.RED + " [ T ] " + CC.RESET);
+                    System.out.print(CC.RED + " [ X ] " + CC.RESET);
                 }
             }
             System.out.println();

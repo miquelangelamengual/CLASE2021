@@ -24,12 +24,14 @@ public class Box {
     }
 
     public void changeFlag() {
+        if (isOpen()) return;
         setFlag(!isFlag());
     }
 
     public void openBox() {
         if (isOpen()) return;
         if (isMine()) Text.gameLost();
+        if (getMinesAround() == 0) setOpen(true);
 
         setOpen(true);
     }

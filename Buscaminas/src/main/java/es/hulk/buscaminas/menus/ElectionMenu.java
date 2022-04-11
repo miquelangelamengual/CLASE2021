@@ -1,20 +1,21 @@
 package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.Buscaminas;
+import es.hulk.buscaminas.objects.Board;
 import es.hulk.buscaminas.objects.Box;
 import es.hulk.buscaminas.utils.Text;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 public class ElectionMenu {
 
-    private MainMenu menu = Buscaminas.getMenu();
-    private Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
+    private static final MainMenu menu = Buscaminas.getMenu();
+    private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
+    private final Board board = Buscaminas.getBoard();
+    @Getter public static boolean iteration = false;
 
-    private int x;
-    private int y;
-
-    public void electionMenu() {
+    public void init() {
         Text.printElectionMenu();
         int option = Text.readInt();
 
@@ -24,10 +25,10 @@ public class ElectionMenu {
         }
 
         Text.log(Text.CUSTOM_BOARD_ROWS);
-        x = Text.readInt();
+        int x = Text.readInt();
 
         Text.log(Text.CUSTOM_BOARD_COLS);
-        y = Text.readInt();
+        int y = Text.readInt();
 
         switch (option) {
             case 1:
@@ -38,11 +39,24 @@ public class ElectionMenu {
                 box[x][y].changeFlag();
                 this.printBoardAndElectionMenu();
                 break;
+            default:
+                this.init();
+                break;
         }
     }
 
     private void printBoardAndElectionMenu() {
         menu.getBoard().printBoard();
-        this.electionMenu();
+        this.secondIteration();
+        this.init();
+    }
+
+    public void secondIteration() {
+        if (!iteration) {
+            menu.getBoard().putNumbers();
+            menu.getBoard().putRandomMines();
+
+            iteration = true;
+        }
     }
 }

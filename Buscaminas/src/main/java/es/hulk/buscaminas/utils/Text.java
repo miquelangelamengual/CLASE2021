@@ -72,6 +72,8 @@ public class Text {
     public String RESET_GAME = "Quieres reiniciar la partida? (yes/no)";
 
     public void gameLost() {
+        logNewLine("");
         logNewLine("Has perdido!");
+        System.exit(404);
     }
 }
