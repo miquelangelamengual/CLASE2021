@@ -29,7 +29,7 @@ public class Board {
     public void printBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.println(board[i][j].toString());
+                System.out.print(board[i][j].toString());
             }
             System.out.println();
         }
