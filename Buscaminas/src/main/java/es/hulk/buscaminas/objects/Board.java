@@ -84,13 +84,7 @@ public class Board {
     public void printLastBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (board[i][j].isFlag()) {
-                    System.out.print(CC.CYAN + " [ F ] " + CC.RESET);
-                } else if (board[i][j].isOpen()) {
-                    System.out.print(CC.GREEN + " [ O ] " + CC.RESET);
-                } else {
-                    System.out.print(CC.RED + " [   ] " + CC.RESET);
-                }
+                System.out.print(board[i][j].returnLastBoard());
             }
             System.out.println();
         }

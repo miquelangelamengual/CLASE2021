@@ -43,4 +43,11 @@ public class Box {
         else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
         else return CC.RESET + " [   ] " + CC.RESET;
     }
+
+    public String returnLastBoard() {
+        if (isOpen()) return CC.GREEN + " [ O ] " + CC.RESET;
+        else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
+        else if (isMine()) return CC.RED + " [ M ] " + CC.RESET;
+        else return CC.RESET + " [   ] " + CC.RESET;
+    }
 }
