@@ -1,5 +1,6 @@
 package es.hulk.buscaminas.objects;
 
+import es.hulk.buscaminas.utils.CC;
 import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.Setter;
@@ -36,4 +37,11 @@ public class Box {
         setOpen(true);
     }
 
+    @Override
+    public String toString() {
+        if (isOpen()) return CC.GREEN + " [ O ] " + CC.RESET;
+        else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
+        else if (isMine()) return CC.RED + " [ M ] " + CC.RESET;
+        else return CC.RESET + " [   ] " + CC.RESET;
+    }
 }
