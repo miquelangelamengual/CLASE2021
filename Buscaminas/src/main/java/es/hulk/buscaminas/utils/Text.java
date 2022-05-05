@@ -79,4 +79,6 @@ public class Text {
         Buscaminas.getMenu().getBoard().printLastBoard();
         System.exit(404);
     }
+
+    public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
 }

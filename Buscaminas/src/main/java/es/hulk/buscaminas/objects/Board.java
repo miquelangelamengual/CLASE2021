@@ -50,7 +50,7 @@ public class Board {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (!board[i][j].isMine()) {
-                    int minesAround = 0;
+                    int minesAround = board[i][j].getMinesAround();
                     if (i > 0 && j > 0 && board[i - 1][j - 1].isMine()) {
                         minesAround++;
                     }

@@ -13,6 +13,7 @@ public class ElectionMenu {
     private static final MainMenu menu = Buscaminas.getMenu();
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
     private final Board board = Buscaminas.getBoard();
+
     @Getter public static boolean iteration = false;
 
     public void init() {

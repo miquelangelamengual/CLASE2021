@@ -5,7 +5,8 @@ import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter @Setter
+@Getter
+@Setter
 public class Box {
 
     private boolean flag;
@@ -14,6 +15,8 @@ public class Box {
     private int minesAround;
     private int x;
     private int y;
+
+    private boolean hasLost = false;
 
     public Box(int x, int y) {
         this.x = x;
@@ -31,7 +34,11 @@ public class Box {
 
     public void openBox() {
         if (isOpen()) return;
-        if (isMine()) Text.gameLost();
+        if (isMine()) {
+            this.hasLost = true;
+            Text.gameLost();
+            System.out.println(hasLost);
+        }
         if (getMinesAround() == 0) setOpen(true);
 
         setOpen(true);
