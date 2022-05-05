@@ -1,7 +1,5 @@
 package es.hulk.buscaminas.objects;
 
-import es.hulk.buscaminas.Buscaminas;
-import es.hulk.buscaminas.menus.ElectionMenu;
 import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
 
@@ -12,8 +10,7 @@ public class Board {
     private int mines;
     int minesAround = 0;
 
-    @Getter
-    private final Box[][] board;
+    @Getter private final Box[][] board;
 
     public Board(int rows, int columns, int mines) {
         this.rows = rows;
@@ -29,25 +26,10 @@ public class Board {
         this.putNumbers();
     }
 
-    boolean iteration = false;
     public void printBoard() {
-
-        if (!iteration) {
-            this.putRandomMines();
-
-            iteration = true;
-        }
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (board[i][j].isFlag()) {
-                    System.out.print(CC.CYAN + " [ F ] " + CC.RESET);
-                } else if (board[i][j].isOpen()) {
-                    System.out.print(CC.GREEN + " [ O ] " + CC.RESET);
-                } else if (iteration || board[i][j].getMinesAround() != 0) {
-                    System.out.print(CC.YELLOW + " [ " + board[i][j].getMinesAround() + " ] " + CC.RESET);
-                } else {
-                    System.out.print(CC.RED + " [ X ] " + CC.RESET);
-                }
+                System.out.println(board[i][j].toString());
             }
             System.out.println();
         }
@@ -96,6 +78,21 @@ public class Board {
                     board[i][j].setMinesAround(minesAround);
                 }
             }
+        }
+    }
+
+    public void printLastBoard() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (board[i][j].isFlag()) {
+                    System.out.print(CC.CYAN + " [ F ] " + CC.RESET);
+                } else if (board[i][j].isOpen()) {
+                    System.out.print(CC.GREEN + " [ O ] " + CC.RESET);
+                } else {
+                    System.out.print(CC.RED + " [   ] " + CC.RESET);
+                }
+            }
+            System.out.println();
         }
     }
 }
