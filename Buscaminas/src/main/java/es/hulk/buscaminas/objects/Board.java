@@ -23,6 +23,7 @@ public class Board {
                 board[i][j] = new Box(i, j);
             }
         }
+        this.putRandomMines();
         this.putNumbers();
     }
 
@@ -50,7 +51,7 @@ public class Board {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (!board[i][j].isMine()) {
-                    int minesAround = board[i][j].getMinesAround();
+                    int minesAround = 0;
                     if (i > 0 && j > 0 && board[i - 1][j - 1].isMine()) {
                         minesAround++;
                     }
@@ -77,6 +78,42 @@ public class Board {
                     }
                     board[i][j].setMinesAround(minesAround);
                 }
+            }
+        }
+    }
+    public void openBoxes(int x, int y) {
+        if (board[x][y].getMinesAround() == 0) {
+            if (x > 0 && y > 0 && !board[x - 1][y - 1].isOpen() && !board[x - 1][y - 1].isFlag()) {
+                board[x - 1][y - 1].setOpen(true);
+                openBoxes(x - 1, y - 1);
+            }
+            if (x > 0 && !board[x - 1][y].isOpen() && !board[x - 1][y].isFlag()) {
+                board[x - 1][y].setOpen(true);
+                openBoxes(x - 1, y);
+            }
+            if (x > 0 && y < columns - 1 && !board[x - 1][y + 1].isOpen() && !board[x - 1][y + 1].isFlag()) {
+                board[x - 1][y + 1].setOpen(true);
+                openBoxes(x - 1, y + 1);
+            }
+            if (y > 0 && !board[x][y - 1].isOpen() && !board[x][y - 1].isFlag()) {
+                board[x][y - 1].setOpen(true);
+                openBoxes(x, y - 1);
+            }
+            if (y < columns - 1 && !board[x][y + 1].isOpen() && !board[x][y + 1].isFlag()) {
+                board[x][y + 1].setOpen(true);
+                openBoxes(x, y + 1);
+            }
+            if (x < rows - 1 && y > 0 && !board[x + 1][y - 1].isOpen() && !board[x + 1][y - 1].isFlag()) {
+                board[x + 1][y - 1].setOpen(true);
+                openBoxes(x + 1, y - 1);
+            }
+            if (x < rows - 1 && !board[x + 1][y].isOpen() && !board[x + 1][y].isFlag()) {
+                board[x + 1][y].setOpen(true);
+                openBoxes(x + 1, y);
+            }
+            if (x < rows - 1 && y < columns - 1 && !board[x + 1][y + 1].isOpen() && !board[x + 1][y + 1].isFlag()) {
+                board[x + 1][y + 1].setOpen(true);
+                openBoxes(x + 1, y + 1);
             }
         }
     }

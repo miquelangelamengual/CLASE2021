@@ -1,5 +1,6 @@
 package es.hulk.buscaminas.objects;
 
+import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.utils.CC;
 import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
@@ -15,8 +16,6 @@ public class Box {
     private int minesAround;
     private int x;
     private int y;
-
-    private boolean hasLost = false;
 
     public Box(int x, int y) {
         this.x = x;
@@ -34,12 +33,11 @@ public class Box {
 
     public void openBox() {
         if (isOpen()) return;
-        if (isMine()) {
-            this.hasLost = true;
-            Text.gameLost();
-            System.out.println(hasLost);
+        if (isMine()) Text.gameLost();
+        if (getMinesAround() == 0) {
+            setOpen(true);
+            Buscaminas.getMenu().getBoard().openBoxes(x, y);
         }
-        if (getMinesAround() == 0) setOpen(true);
 
         setOpen(true);
     }
@@ -48,6 +46,8 @@ public class Box {
     public String toString() {
         if (isOpen()) return CC.GREEN + " [ O ] " + CC.RESET;
         else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
+        else if (isMine()) return CC.RED + " [ M ] " + CC.RESET;
+        else if (getMinesAround() != 0) return CC.RESET + " [ " + getMinesAround() + " ] " + CC.RESET;
         else return CC.RESET + " [   ] " + CC.RESET;
     }
 
