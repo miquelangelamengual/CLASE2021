@@ -1,6 +1,5 @@
 package es.hulk.buscaminas.objects;
 
-import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
 
 public class Board {
@@ -81,6 +80,7 @@ public class Board {
             }
         }
     }
+
     public void openBoxes(int x, int y) {
         if (board[x][y].getMinesAround() == 0) {
             if (x > 0 && y > 0 && !board[x - 1][y - 1].isOpen() && !board[x - 1][y - 1].isFlag()) {
@@ -115,7 +115,20 @@ public class Board {
                 board[x + 1][y + 1].setOpen(true);
                 openBoxes(x + 1, y + 1);
             }
+        } else {
+            board[x][y].setOpen(false);
         }
+    }
+
+    public boolean isGameOver() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (!board[i][j].isOpen() && !board[i][j].isMine()) {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void printLastBoard() {
