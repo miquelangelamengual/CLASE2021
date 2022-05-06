@@ -1,5 +1,6 @@
 package es.hulk.buscaminas.utils;
 
+import es.hulk.buscaminas.Buscaminas;
 import lombok.experimental.UtilityClass;
 
 import java.util.Scanner;
@@ -69,9 +70,22 @@ public class Text {
     public String CUSTOM_BOARD_COLS = "Introduce el numero de columnas: ";
     public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
 
-    public String RESET_GAME = "Quieres reiniciar la partida? (yes/no)";
-
     public void gameLost() {
+        logNewLine("");
         logNewLine("Has perdido!");
+        logNewLine("");
+        logNewLine("Asi es como ha quedado el tablero: ");
+        logNewLine("");
+        Buscaminas.getMenu().getBoard().printLastBoard();
+        System.exit(404);
     }
+
+    public void gameWon() {
+        logNewLine("");
+        logNewLine("Has ganado!");
+        logNewLine("");
+        Buscaminas.getMenu().getBoard().printLastBoard();
+        System.exit(404);
+    }
+    public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
 }

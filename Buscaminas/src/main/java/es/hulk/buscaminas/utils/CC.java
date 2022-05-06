@@ -9,4 +9,5 @@ public class CC {
     public static String YELLOW = "\u001B[33m";
     public static String BLUE="\u001B[34m";
     public static String CYAN = "\u001B[36m";
+
 }

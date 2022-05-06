@@ -1,6 +1,5 @@
 package es.hulk.buscaminas.objects;
 
-import es.hulk.buscaminas.utils.CC;
 import lombok.Getter;
 
 public class Board {
@@ -8,16 +7,14 @@ public class Board {
     private final int rows; // X
     private final int columns; // Y
     private int mines;
-    private int numFlags;
+    int minesAround = 0;
 
-    @Getter
-    private final Box[][] board;
+    @Getter private final Box[][] board;
 
-    public Board(int rows, int columns, int mines, int numFlags) {
+    public Board(int rows, int columns, int mines) {
         this.rows = rows;
         this.columns = columns;
         this.mines = mines;
-        this.numFlags = numFlags;
         board = new Box[rows][columns];
 
         for (int i = 0; i < rows; i++) {
@@ -32,13 +29,7 @@ public class Board {
     public void printBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                if (board[i][j].isFlag()) {
-                    System.out.print(CC.CYAN + " [ F ] " + CC.RESET);
-                } else if (board[i][j].isOpen()) {
-                    System.out.print(CC.CYAN + " [ O ] " + CC.RESET);
-                } else {
-                    System.out.print(CC.RED + " [ T ] " + CC.RESET);
-                }
+                System.out.print(board[i][j].toString());
             }
             System.out.println();
         }
@@ -87,6 +78,66 @@ public class Board {
                     board[i][j].setMinesAround(minesAround);
                 }
             }
+        }
+    }
+
+    public void openBoxes(int x, int y) {
+        if (board[x][y].getMinesAround() == 0) {
+            if (x > 0 && y > 0 && !board[x - 1][y - 1].isOpen() && !board[x - 1][y - 1].isFlag()) {
+                board[x - 1][y - 1].setOpen(true);
+                openBoxes(x - 1, y - 1);
+            }
+            if (x > 0 && !board[x - 1][y].isOpen() && !board[x - 1][y].isFlag()) {
+                board[x - 1][y].setOpen(true);
+                openBoxes(x - 1, y);
+            }
+            if (x > 0 && y < columns - 1 && !board[x - 1][y + 1].isOpen() && !board[x - 1][y + 1].isFlag()) {
+                board[x - 1][y + 1].setOpen(true);
+                openBoxes(x - 1, y + 1);
+            }
+            if (y > 0 && !board[x][y - 1].isOpen() && !board[x][y - 1].isFlag()) {
+                board[x][y - 1].setOpen(true);
+                openBoxes(x, y - 1);
+            }
+            if (y < columns - 1 && !board[x][y + 1].isOpen() && !board[x][y + 1].isFlag()) {
+                board[x][y + 1].setOpen(true);
+                openBoxes(x, y + 1);
+            }
+            if (x < rows - 1 && y > 0 && !board[x + 1][y - 1].isOpen() && !board[x + 1][y - 1].isFlag()) {
+                board[x + 1][y - 1].setOpen(true);
+                openBoxes(x + 1, y - 1);
+            }
+            if (x < rows - 1 && !board[x + 1][y].isOpen() && !board[x + 1][y].isFlag()) {
+                board[x + 1][y].setOpen(true);
+                openBoxes(x + 1, y);
+            }
+            if (x < rows - 1 && y < columns - 1 && !board[x + 1][y + 1].isOpen() && !board[x + 1][y + 1].isFlag()) {
+                board[x + 1][y + 1].setOpen(true);
+                openBoxes(x + 1, y + 1);
+            }
+        } else {
+            board[x][y].setOpen(false);
+        }
+    }
+
+    // Method to check if all board is open execpt mines
+    public boolean isWin() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                if (!board[i][j].isOpen() && !board[i][j].isMine()) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public void printLastBoard() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(board[i][j].toString());
+            }
+            System.out.println();
         }
     }
 }
