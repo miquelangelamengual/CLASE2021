@@ -80,5 +80,12 @@ public class Text {
         System.exit(404);
     }
 
+    public void gameWon() {
+        logNewLine("");
+        logNewLine("Has ganado!");
+        logNewLine("");
+        Buscaminas.getMenu().getBoard().printLastBoard();
+        System.exit(404);
+    }
     public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
 }

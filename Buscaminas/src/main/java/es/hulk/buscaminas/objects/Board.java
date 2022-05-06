@@ -120,7 +120,8 @@ public class Board {
         }
     }
 
-    public boolean isGameOver() {
+    // Method to check if all board is open execpt mines
+    public boolean isWin() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 if (!board[i][j].isOpen() && !board[i][j].isMine()) {
@@ -134,7 +135,7 @@ public class Board {
     public void printLastBoard() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
-                System.out.print(board[i][j].returnLastBoard());
+                System.out.print(board[i][j].toString());
             }
             System.out.println();
         }
