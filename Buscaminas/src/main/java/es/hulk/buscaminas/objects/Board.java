@@ -35,6 +35,15 @@ public class Board {
         }
     }
 
+    public void printLastBoard() {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                System.out.print(board[i][j].toString());
+            }
+            System.out.println();
+        }
+    }
+
     public void putRandomMines() {
         while (mines > 0) {
             int randomX = (int) (Math.random() * rows);
@@ -120,7 +129,6 @@ public class Board {
         }
     }
 
-    // Method to check if all board is open execpt mines
     public boolean isWin() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
@@ -130,14 +138,5 @@ public class Board {
             }
         }
         return true;
-    }
-
-    public void printLastBoard() {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(board[i][j].toString());
-            }
-            System.out.println();
-        }
     }
 }
