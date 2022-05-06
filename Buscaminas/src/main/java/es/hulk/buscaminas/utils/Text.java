@@ -1,6 +1,8 @@
 package es.hulk.buscaminas.utils;
 
 import es.hulk.buscaminas.Buscaminas;
+import es.hulk.buscaminas.objects.Board;
+import es.hulk.buscaminas.objects.Box;
 import lombok.experimental.UtilityClass;
 
 import java.util.Scanner;
@@ -76,7 +78,7 @@ public class Text {
         logNewLine("");
         logNewLine("Asi es como ha quedado el tablero: ");
         logNewLine("");
-        Buscaminas.getMenu().getBoard().printLastBoard();
+        printLastBoard();
         System.exit(404);
     }
 
@@ -84,8 +86,28 @@ public class Text {
         logNewLine("");
         logNewLine("Has ganado!");
         logNewLine("");
-        Buscaminas.getMenu().getBoard().printLastBoard();
+        printLastBoard();
         System.exit(404);
     }
     public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
+
+    public void printBoard() {
+        Board board = Buscaminas.getMenu().getBoard();
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
+                System.out.print(board.getBoard()[i][j].toString());
+            }
+            System.out.println();
+        }
+    }
+
+    public void printLastBoard() {
+        Board board = Buscaminas.getMenu().getBoard();
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
+                System.out.print(board.getBoard()[i][j].getLastBoard());
+            }
+            System.out.println();
+        }
+    }
 }

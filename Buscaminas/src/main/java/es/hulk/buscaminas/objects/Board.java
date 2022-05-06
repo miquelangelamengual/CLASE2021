@@ -2,6 +2,7 @@ package es.hulk.buscaminas.objects;
 
 import lombok.Getter;
 
+@Getter
 public class Board {
 
     private final int rows; // X
@@ -24,24 +25,6 @@ public class Board {
         }
         this.putRandomMines();
         this.putNumbers();
-    }
-
-    public void printBoard() {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(board[i][j].toString());
-            }
-            System.out.println();
-        }
-    }
-
-    public void printLastBoard() {
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                System.out.print(board[i][j].toString());
-            }
-            System.out.println();
-        }
     }
 
     public void putRandomMines() {

@@ -47,7 +47,7 @@ public class ElectionMenu {
     }
 
     private void printBoardAndElectionMenu() {
-        menu.getBoard().printBoard();
+        Text.printBoard();
         this.secondIteration();
         this.init();
     }
