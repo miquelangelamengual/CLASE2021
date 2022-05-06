@@ -45,7 +45,7 @@ public class MainMenu {
         Text.log(Text.CUSTOM_BOARD_MINES);
         int mines = Text.readInt();
 
-        if (x >= 200 && y >= 200 || x <= 4 || y <= 4) {
+        if (x > 200 && y > 200 || x < 4 || y < 4) {
             Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
             init();
         }
