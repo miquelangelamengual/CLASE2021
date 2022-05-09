@@ -7,6 +7,8 @@ import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Scanner;
+
 @NoArgsConstructor
 public class ElectionMenu {
 
@@ -14,35 +16,41 @@ public class ElectionMenu {
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
     private final Board board = Buscaminas.getBoard();
 
-    @Getter public static boolean iteration = false;
+    @Getter
+    public static boolean iteration = false;
 
     public void init() {
-        Text.printElectionMenu();
-        int option = Text.readInt();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            Text.printElectionMenu();
+            int option = scanner.nextInt();
 
-        if (option == 3) {
-            System.exit(404);
-            return;
-        }
+            if (option == 3) {
+                System.exit(404);
+                return;
+            }
 
-        Text.log(Text.CUSTOM_BOARD_ROWS);
-        int x = Text.readInt();
+            Text.log(Text.CUSTOM_BOARD_ROWS);
+            int x = scanner.nextInt();
 
-        Text.log(Text.CUSTOM_BOARD_COLS);
-        int y = Text.readInt();
+            Text.log(Text.CUSTOM_BOARD_COLS);
+            int y = scanner.nextInt();
 
-        switch (option) {
-            case 1:
-                box[x][y].openBox();
-                this.printBoardAndElectionMenu();
-                break;
-            case 2:
-                box[x][y].changeFlag();
-                this.printBoardAndElectionMenu();
-                break;
-            default:
-                this.init();
-                break;
+            switch (option) {
+                case 1:
+                    box[x][y].openBox();
+                    this.printBoardAndElectionMenu();
+                    break;
+                case 2:
+                    box[x][y].changeFlag();
+                    this.printBoardAndElectionMenu();
+                    break;
+                default:
+                    this.init();
+                    break;
+            }
+        } catch (Exception e) {
+            this.init();
         }
     }
 
