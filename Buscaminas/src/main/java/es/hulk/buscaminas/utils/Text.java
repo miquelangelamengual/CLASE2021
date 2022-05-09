@@ -2,13 +2,19 @@ package es.hulk.buscaminas.utils;
 
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Board;
-import es.hulk.buscaminas.objects.Box;
 import lombok.experimental.UtilityClass;
 
 import java.util.Scanner;
 
 @UtilityClass
 public class Text {
+
+    public String LEFT_GAME = CC.RED + "Has sortit del Buscaminas";
+    public String CUSTOM_BOARD_ERROR = CC.RED + "El tablero no puede ser menor de 4x4 o mayor de 200x200";
+    public String CUSTOM_BOARD_ROWS = "Introduce el numero de filas: ";
+    public String CUSTOM_BOARD_COLS = "Introduce el numero de columnas: ";
+    public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
+    public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
 
     private final Scanner scanner = new Scanner(System.in);
 
@@ -52,26 +58,6 @@ public class Text {
         log("Opción: ");
     }
 
-    public String LEFT_GAME = CC.RED + "Has sortit del Buscaminas";
-
-    public String WIN = "Has ganado";
-    public String LOSE = "Has perdido";
-
-    public String REMOVE_FLAG = "Has quitado una bandera";
-    public String PUT_FLAG = "Has puesto una bandera";
-    public String FLAGS_REMAINING = "Banderas restantes";
-    public String OUT_OF_FLAGS = "No te quedan mas banderas";
-    public String PUT_FLAG_ERROR = "No puedes poner una bandera en esta casilla porque ya hay una bandera";
-    public String REMOVE_FLAG_ERROR = "No puedes quitar una bandera en esta casilla porque no hay una bandera";
-
-    public String BOX_ALREDY_OPEN = "Esta casilla ya esta abierta";
-    public String OPEN_BOX = "Has abierto una casilla";
-
-    public String CUSTOM_BOARD_ERROR = CC.RED + "El tablero no puede ser menor de 4x4 o mayor de 200x200";
-    public String CUSTOM_BOARD_ROWS = "Introduce el numero de filas: ";
-    public String CUSTOM_BOARD_COLS = "Introduce el numero de columnas: ";
-    public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
-
     public void gameLost() {
         logNewLine("");
         logNewLine("Has perdido!");
@@ -89,7 +75,6 @@ public class Text {
         printLastBoard();
         System.exit(404);
     }
-    public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
 
     public void printBoard() {
         Board board = Buscaminas.getMenu().getBoard();
