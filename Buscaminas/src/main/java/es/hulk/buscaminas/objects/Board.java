@@ -5,10 +5,9 @@ import lombok.Getter;
 @Getter
 public class Board {
 
-    private final int rows; // X
-    private final int columns; // Y
+    private final int rows;
+    private final int columns;
     private int mines;
-    int minesAround = 0;
 
     @Getter private final Box[][] board;
 

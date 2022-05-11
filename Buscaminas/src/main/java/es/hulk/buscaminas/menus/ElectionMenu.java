@@ -12,12 +12,7 @@ import java.util.Scanner;
 @NoArgsConstructor
 public class ElectionMenu {
 
-    private static final MainMenu menu = Buscaminas.getMenu();
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
-    private final Board board = Buscaminas.getBoard();
-
-    @Getter
-    public static boolean iteration = false;
 
     public void init() {
         try {
@@ -46,26 +41,17 @@ public class ElectionMenu {
                     this.printBoardAndElectionMenu();
                     break;
                 default:
-                    this.init();
+                    System.out.println(Text.INVALID_POSITION);
+                    this.printBoardAndElectionMenu();
                     break;
             }
         } catch (Exception e) {
-            this.init();
+            this.printBoardAndElectionMenu();
         }
     }
 
     private void printBoardAndElectionMenu() {
         Text.printBoard();
-        this.secondIteration();
         this.init();
-    }
-
-    public void secondIteration() {
-        if (!iteration) {
-            menu.getBoard().putNumbers();
-            menu.getBoard().putRandomMines();
-
-            iteration = true;
-        }
     }
 }

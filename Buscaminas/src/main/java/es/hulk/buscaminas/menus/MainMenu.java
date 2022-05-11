@@ -43,21 +43,26 @@ public class MainMenu {
     }
 
     private void customBoard() {
-        Text.log(Text.CUSTOM_BOARD_ROWS);
-        int x = Text.readInt();
+        try {
+            Scanner scanner = new Scanner(System.in);
+            Text.log(Text.CUSTOM_BOARD_ROWS);
+            int x = scanner.nextInt();
 
-        Text.log(Text.CUSTOM_BOARD_COLS);
-        int y = Text.readInt();
+            Text.log(Text.CUSTOM_BOARD_COLS);
+            int y = scanner.nextInt();
 
-        Text.log(Text.CUSTOM_BOARD_MINES);
-        int mines = Text.readInt();
+            Text.log(Text.CUSTOM_BOARD_MINES);
+            int mines = scanner.nextInt();
 
-        if (x > 200 && y > 200 || x < 4 || y < 4) {
-            Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
-            init();
+            if (x > 200 && y > 200 || x < 4 || y < 4) {
+                Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
+                init();
+            }
+
+            generateBoard(x, y, mines);
+        } catch (Exception exception) {
+            this.customBoard();
         }
-
-        generateBoard(x, y, mines);
     }
 
     private void generateBoard(int x, int y, int mines) {

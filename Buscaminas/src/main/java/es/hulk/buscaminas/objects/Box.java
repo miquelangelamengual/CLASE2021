@@ -35,7 +35,6 @@ public class Box {
         if (isOpen()) return;
         if (isMine()) Text.gameLost();
         if (Buscaminas.getMenu().getBoard().isWin()) Text.gameWon();
-        if (getMinesAround() != 0) setOpen(true);
         if (getMinesAround() == 0) {
             setOpen(true);
             Buscaminas.getMenu().getBoard().openBoxes(x, y);
@@ -44,19 +43,23 @@ public class Box {
         setOpen(true);
     }
 
-    @Override
-    public String toString() {
-        if (isOpen()) return CC.GREEN + " [ O ] " + CC.RESET;
-        else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
-        else if (getMinesAround() != 0) return CC.RESET + " [ " + getMinesAround() + " ] " + CC.RESET;
-        else return CC.RESET + " [   ] " + CC.RESET;
-    }
-
-    public String getLastBoard() {
-        if (isOpen()) return CC.GREEN + " [ O ] " + CC.RESET;
-        else if (isFlag()) return CC.CYAN + " [ F ] " + CC.RESET;
-        else if (isMine()) return CC.RED + " [ M ] " + CC.RESET;
-        else if (getMinesAround() != 0) return CC.RESET + " [ " + getMinesAround() + " ] " + CC.RESET;
-        else return CC.RESET + " [   ] " + CC.RESET;
+    public String getBoard(boolean isFinished) {
+        if (isOpen()) {
+            return CC.GREEN + " [ O ] " + CC.RESET;
+        } else if (isFlag()) {
+            return CC.CYAN + " [ F ] " + CC.RESET;
+        } else if (isFinished) {
+            if (isMine()) {
+                return CC.RED + " [ M ] " + CC.RESET;
+            } else if (getMinesAround() != 0) {
+                return CC.RESET + " [ " + getMinesAround() + " ] " + CC.RESET;
+            } else {
+                return CC.RESET + " [   ] " + CC.RESET;
+            }
+        } else if (getMinesAround() != 0) {
+            return CC.RESET + " [ " + getMinesAround() + " ] " + CC.RESET;
+        } else {
+            return CC.RESET + " [   ] " + CC.RESET;
+        }
     }
 }

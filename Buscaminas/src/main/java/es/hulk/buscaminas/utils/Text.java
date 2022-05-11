@@ -14,9 +14,7 @@ public class Text {
     public String CUSTOM_BOARD_ROWS = "Introduce el numero de filas: ";
     public String CUSTOM_BOARD_COLS = "Introduce el numero de columnas: ";
     public String CUSTOM_BOARD_MINES = "Introduce el numero de minas: ";
-    public String NUMBER_ERROR = "ERROR: Aqui tienes que poner un numero";
-
-    private final Scanner scanner = new Scanner(System.in);
+    public String INVALID_POSITION = "ERROR: Posicion invalida";
 
     public void logNewLine(String str) {
         System.out.println(str);
@@ -24,14 +22,6 @@ public class Text {
 
     public void log(String str) {
         System.out.print(str);
-    }
-
-    public int readInt() {
-        return scanner.nextInt();
-    }
-
-    public String readString() {
-        return scanner.next();
     }
 
     public void printMainMenu() {
@@ -80,7 +70,7 @@ public class Text {
         Board board = Buscaminas.getMenu().getBoard();
         for (int i = 0; i < board.getRows(); i++) {
             for (int j = 0; j < board.getColumns(); j++) {
-                System.out.print(board.getBoard()[i][j].toString());
+                System.out.print(board.getBoard()[i][j].getBoard(false));
             }
             System.out.println();
         }
@@ -90,7 +80,7 @@ public class Text {
         Board board = Buscaminas.getMenu().getBoard();
         for (int i = 0; i < board.getRows(); i++) {
             for (int j = 0; j < board.getColumns(); j++) {
-                System.out.print(board.getBoard()[i][j].getLastBoard());
+                System.out.print(board.getBoard()[i][j].getBoard(true));
             }
             System.out.println();
         }
