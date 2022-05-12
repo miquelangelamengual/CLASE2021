@@ -45,8 +45,8 @@ public class ErrorCatching {
             int number = Integer.parseInt(str);
             if (isInGame) {
                 Board board = Buscaminas.getMenu().getBoard();
-                if (number < 0 || number > board.getColumns()) {
-                    System.out.println("Error, introduce un numero entre " + board.getRows() + " y " + board.getColumns());
+                if (number < 0 || number > (board.getColumns() - 1)) {
+                    System.out.println("Error, introduce un numero entre 0 y " + board.getColumns());
                     return returnParseInt(isInGame);
                 }
             }

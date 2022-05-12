@@ -59,7 +59,7 @@ public class MainMenu {
 
     private void generateBoard(int x, int y, int mines) {
         board = new Board(x, y, mines);
-        Text.printBoard();
+        Text.getFirstBoard();
         new ElectionMenu().init();
     }
 }

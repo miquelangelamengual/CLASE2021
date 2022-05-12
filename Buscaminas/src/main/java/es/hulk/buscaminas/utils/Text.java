@@ -85,4 +85,14 @@ public class Text {
             System.out.println();
         }
     }
+
+    public void getFirstBoard() {
+        Board board = Buscaminas.getMenu().getBoard();
+        for (int i = 0; i < board.getRows(); i++) {
+            for (int j = 0; j < board.getColumns(); j++) {
+                System.out.print(CC.RESET + " [   ] " + CC.RESET);
+            }
+            System.out.println();
+        }
+    }
 }
