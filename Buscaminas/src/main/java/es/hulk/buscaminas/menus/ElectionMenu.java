@@ -15,38 +15,34 @@ public class ElectionMenu {
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
 
     public void init() {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            Text.printElectionMenu();
-            int option = scanner.nextInt();
+        Scanner scanner = new Scanner(System.in);
+        Text.printElectionMenu();
+        int option = scanner.nextInt();
 
-            if (option == 3) {
-                System.exit(404);
-                return;
-            }
+        if (option == 3) {
+            System.exit(404);
+            return;
+        }
 
-            Text.log(Text.CUSTOM_BOARD_ROWS);
-            int x = scanner.nextInt();
+        Text.log(Text.CUSTOM_BOARD_ROWS);
+        int x = scanner.nextInt();
 
-            Text.log(Text.CUSTOM_BOARD_COLS);
-            int y = scanner.nextInt();
+        Text.log(Text.CUSTOM_BOARD_COLS);
+        int y = scanner.nextInt();
 
-            switch (option) {
-                case 1:
-                    box[x][y].openBox();
-                    this.printBoardAndElectionMenu();
-                    break;
-                case 2:
-                    box[x][y].changeFlag();
-                    this.printBoardAndElectionMenu();
-                    break;
-                default:
-                    System.out.println(Text.INVALID_POSITION);
-                    this.printBoardAndElectionMenu();
-                    break;
-            }
-        } catch (Exception e) {
-            this.printBoardAndElectionMenu();
+        switch (option) {
+            case 1:
+                box[x][y].openBox();
+                this.printBoardAndElectionMenu();
+                break;
+            case 2:
+                box[x][y].changeFlag();
+                this.printBoardAndElectionMenu();
+                break;
+            default:
+                System.out.println(Text.INVALID_POSITION);
+                this.printBoardAndElectionMenu();
+                break;
         }
     }
 
