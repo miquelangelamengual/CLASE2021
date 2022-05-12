@@ -3,6 +3,7 @@ package es.hulk.buscaminas.menus;
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Board;
 import es.hulk.buscaminas.objects.Box;
+import es.hulk.buscaminas.utils.ErrorCatching;
 import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,11 +14,11 @@ import java.util.Scanner;
 public class ElectionMenu {
 
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
+    private Board board = Buscaminas.getMenu().getBoard();
 
     public void init() {
-        Scanner scanner = new Scanner(System.in);
         Text.printElectionMenu();
-        int option = scanner.nextInt();
+        int option = ErrorCatching.returnChoseInt(0, 3);
 
         if (option == 3) {
             System.exit(404);
@@ -25,10 +26,10 @@ public class ElectionMenu {
         }
 
         Text.log(Text.CUSTOM_BOARD_ROWS);
-        int x = scanner.nextInt();
+        int x = ErrorCatching.returnParseInt(true);
 
         Text.log(Text.CUSTOM_BOARD_COLS);
-        int y = scanner.nextInt();
+        int y = ErrorCatching.returnParseInt(true);
 
         switch (option) {
             case 1:

@@ -1,5 +1,7 @@
 package es.hulk.buscaminas.utils;
 
+import es.hulk.buscaminas.Buscaminas;
+import es.hulk.buscaminas.objects.Board;
 import lombok.experimental.UtilityClass;
 
 import java.util.Scanner;
@@ -33,6 +35,25 @@ public class ErrorCatching {
             return false;
         }
         return true;
+    }
+
+    public static int returnParseInt(boolean isInGame) {
+        Scanner scanner = new Scanner(System.in);
+        String str = scanner.nextLine();
+
+        if (isNumeric(str)) {
+            int number = Integer.parseInt(str);
+            if (isInGame) {
+                Board board = Buscaminas.getMenu().getBoard();
+                if (number < 0 || number > board.getColumns()) {
+                    System.out.println("Error, introduce un numero entre " + board.getRows() + " y " + board.getColumns());
+                    return returnParseInt(isInGame);
+                }
+            }
+            return number;
+        }
+        System.out.println("Esto no es un numero...");
+        return returnParseInt(isInGame);
     }
 }
 

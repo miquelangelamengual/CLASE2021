@@ -17,7 +17,7 @@ public class MainMenu {
 
     public void init() {
         Text.printMainMenu();
-        int option = ErrorCatching.returnChoseInt(0,6);
+        int option = ErrorCatching.returnChoseInt(0, 6);
         switch (option) {
             case 1:
                 generateBoard(8, 8, 8);
@@ -40,26 +40,21 @@ public class MainMenu {
     }
 
     private void customBoard() {
-        try {
-            Scanner scanner = new Scanner(System.in);
-            Text.log(Text.CUSTOM_BOARD_ROWS);
-            int x = scanner.nextInt();
+        Text.log(Text.CUSTOM_BOARD_ROWS);
+        int x = ErrorCatching.returnParseInt(false);
 
-            Text.log(Text.CUSTOM_BOARD_COLS);
-            int y = scanner.nextInt();
+        Text.log(Text.CUSTOM_BOARD_COLS);
+        int y = ErrorCatching.returnParseInt(false);
 
-            Text.log(Text.CUSTOM_BOARD_MINES);
-            int mines = scanner.nextInt();
+        Text.log(Text.CUSTOM_BOARD_MINES);
+        int mines = ErrorCatching.returnParseInt(false);
 
-            if (x > 200 && y > 200 || x < 4 || y < 4) {
-                Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
-                init();
-            }
-
-            generateBoard(x, y, mines);
-        } catch (Exception exception) {
-            this.customBoard();
+        if (x > 200 && y > 200 || x < 4 || y < 4) {
+            Text.logNewLine(Text.CUSTOM_BOARD_ERROR);
+            init();
         }
+
+        generateBoard(x, y, mines);
     }
 
     private void generateBoard(int x, int y, int mines) {

@@ -5,8 +5,8 @@ import lombok.Getter;
 @Getter
 public class Board {
 
-    private final int rows;
-    private final int columns;
+    private int rows;
+    private int columns;
     private int mines;
 
     @Getter private final Box[][] board;
