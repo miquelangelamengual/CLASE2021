@@ -2,6 +2,7 @@ package es.hulk.buscaminas.menus;
 
 import es.hulk.buscaminas.Buscaminas;
 import es.hulk.buscaminas.objects.Board;
+import es.hulk.buscaminas.utils.ErrorCatching;
 import es.hulk.buscaminas.utils.Text;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ public class MainMenu {
 
     public void init() {
         Text.printMainMenu();
-        int option = scanner.nextInt();
+        int option = ErrorCatching.returnChoseInt(0,6);
         switch (option) {
             case 1:
                 generateBoard(8, 8, 8);
