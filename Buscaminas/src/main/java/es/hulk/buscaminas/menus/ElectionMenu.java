@@ -14,7 +14,6 @@ import java.util.Scanner;
 public class ElectionMenu {
 
     private final Box[][] box = Buscaminas.getMenu().getBoard().getBoard();
-    private Board board = Buscaminas.getMenu().getBoard();
 
     public void init() {
         Text.printElectionMenu();
